@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { InvoicesApi } from '../../api/Invoices'; 
 import { Invoice } from '../Invoice/Invoice'; 
+import "./InvoiceList.css";
 
 const InvoicesList = () => {
+
     const [invoices, setInvoices] = useState([]);
 
     useEffect(() => {
@@ -17,7 +19,7 @@ const InvoicesList = () => {
     return (
         <div>
             <h1>Lista Faktur</h1>
-            <ul>
+            <ul className='invoice_ul'>
                 {invoices.map(invoice => (
                     <Invoice key={invoice.id} invoice={invoice} />
                 ))}

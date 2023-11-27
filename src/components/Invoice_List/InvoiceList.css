@@ -1,0 +1,13 @@
+h1 {
+    text-align:center;
+    padding: 20px;
+}
+
+.invoice_ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 0; /* Usuwa domyślny padding dla list */
+    margin: 0; /* Usuwa domyślny margines dla list */
+  }
