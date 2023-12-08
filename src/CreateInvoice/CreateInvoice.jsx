@@ -4,13 +4,11 @@ class CreateInvoice extends React.Component {
    state = {
         nameInvoice: '',
         dataInvoice: '',
+        amountInvoice: '', 
     }
 
-chandlerInvoice = (event) => {
-        this.setState({nameInvoice: event.target.value});
-        this.setState({dataInvoice: event.target.value});
-        
-        
+chandlerInvoice = (e) => {
+        this.setState({[e.target.name]: e.target.value});
     }
 
 render(){
@@ -29,8 +27,12 @@ render(){
         value={this.state.dataInvoice}
         onChange={this.chandlerInvoice}
         ></input>
+        <input name='amountInvoice' type="text"
+        value={this.state.amountInvoice}
+        onChange={this.chandlerInvoice}></input>
         </div>
         </>
+
     ) 
 }
 
