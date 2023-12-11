@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 import  {InvoiceListPage}  from '../components/invoicesPage/InvoicesPage';
 import NewsPage from '../components/newsPage/NewsPage';
 import "./App.css";
-import CreateInvoicePage from '../CreateInvoicePage/CreateInvoicePage.jsx';
+import CreateInvoicePage from '../components/CreateInvoicePage/CreateInvoicePage.jsx';
 
 function App() {
 

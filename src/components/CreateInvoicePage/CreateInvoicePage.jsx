@@ -1,4 +1,3 @@
-import React from 'react';
 import CreateInvoice from '../CreateInvoice/CreateInvoice';
 
 const CreateInvoicePage = () => {
