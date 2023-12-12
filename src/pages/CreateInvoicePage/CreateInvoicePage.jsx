@@ -1,4 +1,4 @@
-import CreateInvoice from '../CreateInvoice/CreateInvoice';
+import CreateInvoice from '../../components/CreateInvoice/CreateInvoice';
 
 const CreateInvoicePage = () => {
     return (
