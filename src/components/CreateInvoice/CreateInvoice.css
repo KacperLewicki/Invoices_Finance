@@ -1,0 +1,42 @@
+.invoices_forms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 20px; 
+    background-color: #e0e0e0; 
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5); 
+  }
+  
+  .inputValue_invoices {
+    width: 100%; 
+    padding: 15px;
+    border: 1px solid #007bff; 
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .h1_create_invoices {
+    color: #007bff; 
+    text-align: center;
+  }
+
+  .invoiceCreateButton {
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    grid-column: 2; 
+
+    
+  }
+  
+  .invoiceCreateButton:hover {
+    background-color: #0056b3; 
+  }
