@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 import  {InvoiceListPage}  from '../pages/invoicesPage/InvoicesPage';
 import NewsPage from '../pages/newsPage/NewsPage';
