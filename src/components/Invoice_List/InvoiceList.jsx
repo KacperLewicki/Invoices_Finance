@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { InvoicesApi } from '../../api/Invoices'; 
 import { Invoice } from '../Invoice/Invoice'; 
 import "./InvoiceList.css";
