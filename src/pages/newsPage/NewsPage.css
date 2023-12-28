@@ -1,13 +1,16 @@
 .NewsPage_h1 {
+
     color: #333; 
     font-size: 2.5em; 
     margin-top: 0; 
     margin-bottom: 0.5em; 
     text-align: center; 
     font-family: Arial, sans-serif; 
+
 }
 
 .NewsPage_p {
+
     color: #666; 
     font-size: 1em; 
     margin-top: 0.5em; 
@@ -15,4 +18,5 @@
     text-align: justify; 
     padding: 30px;
     font-family: 'Times New Roman', serif; 
+
 }

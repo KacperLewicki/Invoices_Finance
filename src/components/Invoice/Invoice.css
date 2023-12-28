@@ -1,10 +1,13 @@
 .invoice_li {
+
     border-style: outset;
     padding: 10px;
     margin: 10px;
+
 }
 
 .invoice_p {
+
     border: 1px solid #ccc; 
     padding: 10px; 
     box-sizing: border-box; 
@@ -13,6 +16,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
   }
 
   
