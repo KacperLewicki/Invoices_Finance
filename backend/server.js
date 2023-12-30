@@ -20,20 +20,47 @@ data.connect(error => {
 
 app.post("/invoice_manualforms", (req, res) => {
     
-    const { nameInvoice, dataInvoice, amountInvoice, currency, status, customerName } = req.body;
+const { 
+        
+    nameInvoice, 
+    dataInvoice, 
+    amountInvoice, 
+    currency, 
+    status, 
+    customerName 
+
+    } = req.body;
 
 
-const query = `INSERT INTO invoicemanual (nameInvoice, dataInvoice, amountInvoice, currency, status, customerName)
+const query =
+
+`INSERT INTO invoicemanual (
+    nameInvoice, 
+    dataInvoice, 
+    amountInvoice, 
+    currency, 
+    status, 
+    customerName
+)
 
 VALUE (?, ?, ?, ?, ?, ?)`;
 
-const values = [nameInvoice, dataInvoice, amountInvoice, currency, status, customerName];
+const values = [
+    nameInvoice, 
+    dataInvoice, 
+    amountInvoice, 
+    currency, 
+    status, 
+    customerName
+];
 
 data.query(query, values, (error, results) => {
     if(error) {
-        res.status(500).send({message: "Bład podczas zapisu, do bazy danych", error});
+        res.status(500).send({message: 
+            "Bład podczas zapisu, do bazy danych", error});
     } else {
-        res.status(201).send({message: "Faktura została pomyślnie utworzona", invoiceId: results.insertId});
+        res.status(201).send({message: 
+            "Faktura została pomyślnie utworzona", invoiceId: results.insertId});
     }
 });
 });
