@@ -1,4 +1,3 @@
-import React from 'react';
 import CreateInvoice from '../../components/CreateInvoice/CreateInvoice';
 import axios from 'axios';
 
