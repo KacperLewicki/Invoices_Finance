@@ -14,6 +14,7 @@ class CreateInvoice extends React.Component {
         status: "",
         currency: "",
         customerName: "",
+        iconsBlocked: false,
     };
 
   }
@@ -25,9 +26,13 @@ handlerInvoice = (e) => {
 invoiceCreateForm = (e) => {
     e.preventDefault();
     this.props.onFormSubmit(this.state); 
-    }
+    this.setState({iconsBlocked: true});
+
+    };
 
 render(){
+
+    const { iconsBlocked } = this.state
    
     return(
         <>
@@ -39,6 +44,7 @@ render(){
         type='text' 
         value={this.state.nameInvoice}
         onChange={this.handlerInvoice} 
+        disabled={iconsBlocked}
         placeholder='nazwa faktury'
         />
         <input
@@ -46,6 +52,7 @@ render(){
         name='dataInvoice'
         type='date'
         value={this.state.dataInvoice}
+        disabled={iconsBlocked}
         onChange={this.handlerInvoice}
         />
         <input
@@ -53,6 +60,7 @@ render(){
         name='amountInvoice' 
         type= "Number"
         value={this.state.amountInvoice}
+        disabled={iconsBlocked}
         onChange={this.handlerInvoice}
         placeholder='kwota'
         />
@@ -61,6 +69,7 @@ render(){
         name='status'
         type='text'
         value={this.state.status}
+        disabled={iconsBlocked}
         onChange={this.handlerInvoice}
         placeholder='status'
         />
@@ -69,6 +78,7 @@ render(){
         name='customerName'
         type='text'
         value={this.state.customerName}
+        disabled={iconsBlocked}
         onChange={this.handlerInvoice}
         placeholder='customer'
         />
@@ -77,12 +87,14 @@ render(){
         name="currency"
         type='text'
         value={this.state.currency}
+        disabled={iconsBlocked}
         onChange={this.handlerInvoice}
         placeholder='currency'
         />
 
         <button
         className='invoiceCreateButton'
+        disabled={iconsBlocked}
         type='submit'
         >
         Wyślij fakture
