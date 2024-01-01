@@ -30,6 +30,10 @@ invoiceCreateForm = (e) => {
 
     };
 
+addNewForms = () => {
+    console.log("Działa");
+}
+
 render(){
 
     const { iconsBlocked } = this.state
@@ -37,6 +41,12 @@ render(){
     return(
         <>
         <h1 className='h1_create_invoices'>Create Invoice manual</h1>
+
+        <button 
+        onClick={this.addNewForms}
+        className='addNewFormButton'
+        >New Forms</button>
+    
         <form onSubmit={this.invoiceCreateForm} className='invoices_forms'>
         <input 
         className='inputValue_invoices' 
