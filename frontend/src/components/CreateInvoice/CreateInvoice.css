@@ -48,3 +48,24 @@
     background-color: #0056b3; 
     
   }
+
+  .addNewFormButton {
+    
+    background-color: greenyellow; 
+    color: black;
+    border: none;
+    margin: 10px;
+    padding: 10px 20px; 
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    grid-column: 2; 
+
+  }
+
+  .addNewFormButton:hover {
+
+    background-color: green; 
+    
+  }
