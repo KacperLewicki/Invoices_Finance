@@ -2,41 +2,66 @@ import React from 'react';
 import "./CreateInvoice.css";
 
 class CreateInvoice extends React.Component {
-  
+
     constructor(props){
 
     super(props);
 
-    this.state = {
+    const savedData = localStorage.getItem('invoiceFormData');
+    const initialState = savedData ? JSON.parse(savedData) :  {
         nameInvoice: '',
         dataInvoice: Date,
         amountInvoice: Number, 
-        status: "",
-        currency: "",
+        status: "invoice being created",
+        currency: {value: ""},
         customerName: "",
         iconsBlocked: false,
     };
 
+    this.state = initialState;
+
   }
 
 handlerInvoice = (e) => {
-        this.setState({[e.target.name]: e.target.value});
-    }
+    const updatedState = {[e.target.name]: e.target.value};
+    this.setState(updatedState, () => {
+        localStorage.setItem('invoiceFormData', JSON.stringify(this.state));
+    });
+}
 
-invoiceCreateForm = (e) => {
+handleFormSubmit = (e) => {
+
     e.preventDefault();
-    this.props.onFormSubmit(this.state); 
-    this.setState({iconsBlocked: true});
-
+    this.setState({
+        iconsBlocked: true,
+        status: "Invoice sent",
+        
+    
+    });
+    setTimeout(()=> {
+        this.props.onFormSubmit(this.state); 
+    },1000)   
     };
 
 addNewForms = () => {
-    console.log("Działa");
+
+    this.setState(this.state = {
+    nameInvoice: '',
+    dataInvoice: "",
+    amountInvoice: 0, 
+    status: "invoice being created",
+    currency: "",
+    customerName: "",
+    iconsBlocked: false,
+
+    });
+
+    alert("Stworzono nowy formularz.");
 }
 
 render(){
 
-    const { iconsBlocked } = this.state
+    const { iconsBlocked } = this.state;
    
     return(
         <>
@@ -47,7 +72,9 @@ render(){
         className='addNewFormButton'
         >New Forms</button>
     
-        <form onSubmit={this.invoiceCreateForm} className='invoices_forms'>
+        <form 
+        onSubmit={this.handleFormSubmit} 
+        className='invoices_forms'>
         <input 
         className='inputValue_invoices' 
         name='nameInvoice' 
@@ -74,15 +101,15 @@ render(){
         onChange={this.handlerInvoice}
         placeholder='kwota'
         />
+
         <input
         className='inputValue_invoices' 
         name='status'
-        type='text'
         value={this.state.status}
-        disabled={iconsBlocked}
+        disabled
         onChange={this.handlerInvoice}
-        placeholder='status'
         />
+
         <input
         className='inputValue_invoices' 
         name='customerName'
@@ -92,15 +119,21 @@ render(){
         onChange={this.handlerInvoice}
         placeholder='customer'
         />
-        <input
+        <label>
+        <select
         className='inputValue_invoices' 
         name="currency"
         type='text'
         value={this.state.currency}
         disabled={iconsBlocked}
         onChange={this.handlerInvoice}
-        placeholder='currency'
-        />
+        >
+            <option disabled hidden>Select Option</option>
+            <option>PLN</option>
+            <option>EUR</option>
+            <option>USD</option>
+        </select>
+        </label>
 
         <button
         className='invoiceCreateButton'
@@ -109,7 +142,6 @@ render(){
         >
         Wyślij fakture
         </button>
-       
         </form>
     
         </>

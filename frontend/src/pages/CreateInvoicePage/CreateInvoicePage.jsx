@@ -3,7 +3,8 @@ import axios from 'axios';
 
 const CreateInvoicePage = () => {
 
-    const invoiceCreateForm = (formData) => {
+       
+    const handleFormSubmit = (formData) => {
 
         const apiEndPoint = "http://localhost:6969/invoice_manualforms";
 
@@ -20,7 +21,7 @@ const CreateInvoicePage = () => {
     };
 
     return (
-        <CreateInvoice onFormSubmit={invoiceCreateForm} />
+        <CreateInvoice onFormSubmit={handleFormSubmit}  />
 
     )
 }
