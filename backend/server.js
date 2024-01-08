@@ -18,6 +18,25 @@ data.connect(error => {
     console.log("połączono z bazą danych");
 });
 
+
+app.get("/invoice_manualformsInvoiceNumber", (req,res) => {
+
+    const valueInvoiceNumber = `SELECT nameInvoice FROM invoicemanual ORDER BY nameInvoice DESC LIMIT 1`;
+
+    data.query(valueInvoiceNumber, (error, results, fields) => {
+        if(error){
+            res.status(500).send(error.message);
+                
+            return;
+        }
+
+        const lastInvoiceName = results[0].nameInvoice;
+        res.send(lastInvoiceName)
+
+    })
+
+})
+
 app.post("/invoice_manualforms", (req, res) => {
     
 const { 
@@ -64,6 +83,8 @@ data.query(query, values, (error, results) => {
     }
 });
 });
+
+
 
 app.listen(6969, ()=> {
     console.log("nasłuchuje, ziom cisza!")

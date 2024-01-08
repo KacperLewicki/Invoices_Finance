@@ -1,5 +1,6 @@
 import React from 'react';
 import "./CreateInvoice.css";
+import axios from 'axios';
 
 class CreateInvoice extends React.Component {
 
@@ -9,7 +10,7 @@ class CreateInvoice extends React.Component {
 
     const savedData = localStorage.getItem('invoiceFormData');
     const initialState = savedData ? JSON.parse(savedData) :  {
-        nameInvoice: '',
+        nameInvoice: "",
         dataInvoice: Date,
         amountInvoice: Number, 
         status: "invoice being created",
@@ -29,6 +30,28 @@ handlerInvoice = (e) => {
     });
 }
 
+componentDidMount() {
+    const apiEndPoint = "http://localhost:6969/invoice_manualformsInvoiceNumber";
+    
+    axios.get(apiEndPoint).then(
+        res => {
+            const lastNumber = res.data;
+            const currentYear = new Date().getFullYear().toString().slice(-2);
+            console.log(lastNumber);
+            const lastNumArr = lastNumber.split("/");
+            console.log(lastNumArr);
+            const lastNumParse = parseInt(lastNumArr[1],10);
+            console.log(lastNumParse);
+            const nextNum = lastNumParse + 1;
+            console.log(nextNum);
+            const newNumInvoice = `FV/${nextNum.toString().padStart(4,"0")}/${currentYear}`
+            console.log(newNumInvoice);
+            this.setState({nameInvoice: newNumInvoice});
+
+        }
+    )
+}
+
 handleFormSubmit = (e) => {
 
     e.preventDefault();
@@ -45,18 +68,20 @@ handleFormSubmit = (e) => {
 
 addNewForms = () => {
 
-    this.setState(this.state = {
-    nameInvoice: '',
-    dataInvoice: "",
-    amountInvoice: 0, 
-    status: "invoice being created",
-    currency: "",
-    customerName: "",
-    iconsBlocked: false,
 
-    });
+      this.setState(this.state = {
+        nameInvoice: "",
+        dataInvoice: "",
+        amountInvoice: 0, 
+        status: "invoice being created",
+        currency: "",
+        customerName: "",
+        iconsBlocked: false, 
+        })
 
-    alert("Stworzono nowy formularz.");
+        localStorage.removeItem("invoiceFormData");
+
+    alert("Stworzono nowy formularz.", location.reload());
 }
 
 render(){
@@ -75,15 +100,15 @@ render(){
         <form 
         onSubmit={this.handleFormSubmit} 
         className='invoices_forms'>
+
         <input 
         className='inputValue_invoices' 
         name='nameInvoice' 
-        type='text' 
-        value={this.state.nameInvoice}
-        onChange={this.handlerInvoice} 
-        disabled={iconsBlocked}
-        placeholder='nazwa faktury'
+        type='text'
+        value={this.state.nameInvoice} 
+        disabled
         />
+
         <input
         className='inputValue_invoices'
         name='dataInvoice'
@@ -92,6 +117,7 @@ render(){
         disabled={iconsBlocked}
         onChange={this.handlerInvoice}
         />
+
         <input
         className='inputValue_invoices' 
         name='amountInvoice' 
@@ -119,6 +145,7 @@ render(){
         onChange={this.handlerInvoice}
         placeholder='customer'
         />
+
         <label>
         <select
         className='inputValue_invoices' 
@@ -128,7 +155,7 @@ render(){
         disabled={iconsBlocked}
         onChange={this.handlerInvoice}
         >
-            <option disabled hidden>Select Option</option>
+            <option hidden>Select Currency</option>
             <option>PLN</option>
             <option>EUR</option>
             <option>USD</option>
