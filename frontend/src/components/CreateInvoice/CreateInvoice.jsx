@@ -30,7 +30,9 @@ handlerInvoice = (e) => {
     });
 }
 
-componentDidMount() {
+
+
+getDataInvoiceNumber = () => {
     const apiEndPoint = "http://localhost:6969/invoice_manualformsInvoiceNumber";
     
     axios.get(apiEndPoint).then(
@@ -49,18 +51,20 @@ componentDidMount() {
             this.setState({nameInvoice: newNumInvoice});
 
         }
-    )
+    ) 
 }
 
 handleFormSubmit = (e) => {
 
     e.preventDefault();
+
+    this.getDataInvoiceNumber();
+
     this.setState({
         iconsBlocked: true,
         status: "Invoice sent",
-        
-    
     });
+
     setTimeout(()=> {
         this.props.onFormSubmit(this.state); 
     },1000)   
@@ -107,6 +111,7 @@ render(){
         type='text'
         value={this.state.nameInvoice} 
         disabled
+        placeholder='Numer fakutry pokaże się po wysłaniu'
         />
 
         <input
