@@ -1,6 +1,5 @@
 import React from 'react';
 import "./CreateInvoice.css";
-import axios from 'axios';
 
 class CreateInvoice extends React.Component {
 
@@ -31,39 +30,19 @@ handlerInvoice = (e) => {
 }
 
 
-
-getDataInvoiceNumber = () => {
-    const apiEndPoint = "http://localhost:6969/invoice_manualformsInvoiceNumber";
-    
-    axios.get(apiEndPoint).then(
-        res => {
-            const lastNumber = res.data;
-            const currentYear = new Date().getFullYear().toString().slice(-2);
-            console.log(lastNumber);
-            const lastNumArr = lastNumber.split("/");
-            console.log(lastNumArr);
-            const lastNumParse = parseInt(lastNumArr[1],10);
-            console.log(lastNumParse);
-            const nextNum = lastNumParse + 1;
-            console.log(nextNum);
-            const newNumInvoice = `FV/${nextNum.toString().padStart(4,"0")}/${currentYear}`
-            console.log(newNumInvoice);
-            this.setState({nameInvoice: newNumInvoice});
-
-        }
-    ) 
-}
-
 handleFormSubmit = (e) => {
+    
+    e.preventDefault();    
+    
+    let { getDataInvoiceNumber } = this.props;
 
-    e.preventDefault();
-
-    this.getDataInvoiceNumber();
-
-    this.setState({
-        iconsBlocked: true,
-        status: "Invoice sent",
-    });
+    getDataInvoiceNumber().then(newNumInvoice => {
+        this.setState({ 
+            iconsBlocked: true,
+            status: "Invoice sent",
+            nameInvoice: newNumInvoice 
+        });
+    })
 
     setTimeout(()=> {
         this.props.onFormSubmit(this.state); 
@@ -85,7 +64,7 @@ addNewForms = () => {
 
         localStorage.removeItem("invoiceFormData");
 
-    alert("Stworzono nowy formularz.", location.reload());
+        alert("Stworzono nowy formularz.", location.reload());
 }
 
 render(){
