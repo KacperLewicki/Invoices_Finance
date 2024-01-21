@@ -1,0 +1,16 @@
+.invoiceItems {
+    grid-column: span 3;
+    grid-row: span 3;
+    color: blue; 
+
+}
+
+
+.invoiceFormsItems {
+    width: 100%; 
+    padding: 15px;
+    border: 1px solid #007bff; 
+    border-radius: 5px;
+    font-size: 16px;
+}
+
