@@ -43,11 +43,12 @@ const CreateInvoicePage = () => {
     };
 
     return (
+        <>
         <CreateInvoice 
         onFormSubmit={handleFormSubmit}  
         getDataInvoiceNumber={getDataInvoiceNumber}  
         />
-
+        </>
     )
 }
 

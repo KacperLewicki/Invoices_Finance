@@ -1,6 +1,6 @@
 import React from 'react';
 import "./CreateInvoice.css";
-
+import CreateItemInvoice from '../../components/CreateInvoiceItem/createInvoiceItem';
 
 class CreateInvoice extends React.Component {
 
@@ -22,6 +22,7 @@ class CreateInvoice extends React.Component {
     this.state = initialState;
 
   }
+
 
 handlerInvoice = (e) => {
     const updatedState = {[e.target.name]: e.target.value};
@@ -147,6 +148,8 @@ render(){
         </select>
         </label>
 
+        <CreateItemInvoice />
+        
         <button
         className='invoiceCreateButton'
         disabled={iconsBlocked}
@@ -155,7 +158,9 @@ render(){
         Wyślij fakture
         </button>
         </form>
+
     
+
         </>
 
     ) 
