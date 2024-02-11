@@ -1,5 +1,5 @@
 
-# Invoices_Finance_App_Website Project
+# Invoices Finance App Website Project
 # Introduction
 The Invoices_Finance_App_Website project is a web application designed for invoice management. This application facilitates the retrieval of invoices from an external API and displays them on a dedicated subpage. The project is currently under development, with plans for further expansion of its features.
 
