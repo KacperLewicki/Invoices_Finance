@@ -23,14 +23,12 @@ class CreateInvoice extends React.Component {
 
   }
 
-
 handlerInvoice = (e) => {
     const updatedState = {[e.target.name]: e.target.value};
     this.setState(updatedState, () => {
         localStorage.setItem('invoiceFormData', JSON.stringify(this.state));
     });
 }
-
 
 handleFormSubmit = (e) => {
     
@@ -52,7 +50,6 @@ handleFormSubmit = (e) => {
     };
 
 addNewForms = () => {
-
 
       this.setState(this.state = {
         nameInvoice: "",
@@ -149,7 +146,7 @@ render(){
         </label>
 
         <CreateItemInvoice />
-        
+
         <button
         className='invoiceCreateButton'
         disabled={iconsBlocked}
@@ -158,9 +155,7 @@ render(){
         Wyślij fakture
         </button>
         </form>
-
     
-
         </>
 
     ) 
