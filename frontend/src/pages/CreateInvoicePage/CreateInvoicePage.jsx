@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const CreateInvoicePage = () => {
 
-    const getDataInvoiceNumber = () => {
+    let getDataInvoiceNumber = () => {
         
        const apiEndPoint = "http://localhost:6969/invoice_manualformsInvoiceNumber";
         
@@ -26,21 +26,34 @@ const CreateInvoicePage = () => {
             ) 
         }
 
-    const handleFormSubmit = (formData) => {
-
-        const apiEndPoint = "http://localhost:6969/invoice_manualforms";
-
-            axios.post(apiEndPoint,formData)
+    let handleFormSubmit = (formData, items) => { 
+            const apiEndPoint = "http://localhost:6969/invoice_manualforms";
+            
+            return axios.post(apiEndPoint, formData) 
                 .then(response => {
                     alert('Faktura została pomyślnie utworzona.');
-                    console.log(response.data);
-                })
+    
+                    if (!Array.isArray(items)) {
+                        throw new Error('Items should be an array');
+                    }
 
+                    const itemsEndPoint = "http://localhost:6969/invoice_items"; 
+                    console.log('Wysyłanie do backendu:', { items, invoiceId: response.data.invoiceId });
+                    return axios.post(itemsEndPoint, { 
+                        items, 
+                        invoiceId: response.data.invoiceId 
+                    });
+                })
+                .then(response => {
+
+                    // dodatkowa logika przy wysyłaniu danych 
+                })
                 .catch(error => {
-                    console.log ('Wystąpił błąd podczas tworzenia faktury.');
-                    console.error(error);
-                })  
-    };
+            
+                    console.error('Error:', error.response || error);
+                    alert('Wystąpił błąd podczas tworzenia faktury lub zapisywania elementów.');
+                });
+        };
 
     return (
         <CreateInvoice 

@@ -9,6 +9,7 @@ class CreateInvoice extends React.Component {
     super(props);
 
     const savedData = localStorage.getItem('invoiceFormData');
+
     const initialState = savedData ? JSON.parse(savedData) :  {
         nameInvoice: "",
         dataInvoice: Date,
@@ -17,11 +18,19 @@ class CreateInvoice extends React.Component {
         currency: {value: ""},
         customerName: "",
         iconsBlocked: false,
+        items: [],
     };
 
     this.state = initialState;
 
   }
+
+
+updateItems = (newItems) => {
+    console.log('Aktualizacja items:', newItems); 
+    this.setState({ items: newItems });
+};
+
 
 handlerInvoice = (e) => {
     const updatedState = {[e.target.name]: e.target.value};
@@ -31,23 +40,27 @@ handlerInvoice = (e) => {
 }
 
 handleFormSubmit = (e) => {
-    
     e.preventDefault();    
     
-    let { getDataInvoiceNumber } = this.props;
 
-    getDataInvoiceNumber().then(newNumInvoice => {
+    this.props.getDataInvoiceNumber().then(newNumInvoice => {
+
         this.setState({ 
             iconsBlocked: true,
             status: "Invoice sent",
             nameInvoice: newNumInvoice 
+        }, () => {
+            this.props.onFormSubmit(this.state, this.state.items) 
+            .then(() => {
+               
+            }).catch(error => {
+                console.error(error);
+                alert('Wystąpił błąd podczas tworzenia faktury lub zapisywania elementów.');
+            });
         });
-    })
+    });
+};
 
-    setTimeout(()=> {
-        this.props.onFormSubmit(this.state); 
-    },1000)   
-    };
 
 addNewForms = () => {
 
@@ -58,10 +71,12 @@ addNewForms = () => {
         status: "invoice being created",
         currency: "",
         customerName: "",
-        iconsBlocked: false, 
+        iconsBlocked: false,
+        items: [],
         })
 
         localStorage.removeItem("invoiceFormData");
+        localStorage.removeItem("recordsItem");
 
         alert("Stworzono nowy formularz.", location.reload());
 }
@@ -145,7 +160,7 @@ render(){
         </select>
         </label>
 
-        <CreateItemInvoice />
+        <CreateItemInvoice updateItems={this.updateItems} />
 
         <button
         className='invoiceCreateButton'
