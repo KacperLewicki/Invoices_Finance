@@ -93,6 +93,14 @@ render(){
         onClick={this.addNewForms}
         className='addNewFormButton'
         >New Forms</button>
+
+        <button
+        className='invoiceCreateButton'
+        disabled={iconsBlocked}
+        type='submit'
+        >      
+        Send Invoice
+        </button>
     
         <form 
         onSubmit={this.handleFormSubmit} 
@@ -162,13 +170,6 @@ render(){
 
         <CreateItemInvoice updateItems={this.updateItems} />
 
-        <button
-        className='invoiceCreateButton'
-        disabled={iconsBlocked}
-        type='submit'
-        >
-        Wyślij fakture
-        </button>
         </form>
     
         </>
