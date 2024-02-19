@@ -119,10 +119,10 @@ return(
     />
 
     <button className='invoiceTableItemsButton' type='button' onClick={this.createInvoiceItem}>Add Item to invoice</button>
-
-     <h2 className='invoiceItems'>Items</h2>
+    <h2 className='invoiceItems'>Items</h2>
 
     <table className='invoiceTableItems'>
+
         <thead>
             
             <tr>
