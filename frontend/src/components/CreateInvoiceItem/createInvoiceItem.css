@@ -32,7 +32,6 @@
     position: relative; 
 }
 
-
 .invoiceTableItems td::after {
     content: '';
     position: absolute;
@@ -67,7 +66,7 @@
 
     background-color: green; 
     
-  }
+}
 
 .invoiceItems {
 
