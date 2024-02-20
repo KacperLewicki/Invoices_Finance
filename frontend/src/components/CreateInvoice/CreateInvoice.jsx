@@ -25,7 +25,6 @@ class CreateInvoice extends React.Component {
 
   }
 
-
 updateItems = (newItems) => {
     console.log('Aktualizacja items:', newItems); 
     this.setState({ items: newItems });
@@ -41,7 +40,6 @@ handlerInvoice = (e) => {
 
 handleFormSubmit = (e) => {
     e.preventDefault();    
-    
 
     this.props.getDataInvoiceNumber().then(newNumInvoice => {
 
@@ -89,78 +87,20 @@ render(){
         <>
         <h1 className='h1_create_invoices'>Create Invoice manual</h1>
 
-        <button 
-        onClick={this.addNewForms}
-        className='addNewFormButton'
-        >New Forms</button>
+        <button onClick={this.addNewForms} className='addNewFormButton'>New Forms</button>
 
-        <button
-        className='invoiceCreateButton'
-        disabled={iconsBlocked}
-        type='submit'
-        >      
-        Send Invoice
-        </button>
+        <button className='invoiceCreateButton' disabled={iconsBlocked} type='submit'> Send Invoice </button>
     
-        <form 
-        onSubmit={this.handleFormSubmit} 
-        className='invoices_forms'>
+        <form onSubmit={this.handleFormSubmit} className='invoices_forms'>
 
-        <input 
-        className='inputValue_invoices' 
-        name='nameInvoice' 
-        type='text'
-        value={this.state.nameInvoice} 
-        disabled
-        placeholder='Numer fakutry pokaże się po wysłaniu'
-        />
-
-        <input
-        className='inputValue_invoices'
-        name='dataInvoice'
-        type='date'
-        value={this.state.dataInvoice}
-        disabled={iconsBlocked}
-        onChange={this.handlerInvoice}
-        />
-
-        <input
-        className='inputValue_invoices' 
-        name='amountInvoice' 
-        type= "Number"
-        value={this.state.amountInvoice}
-        disabled={iconsBlocked}
-        onChange={this.handlerInvoice}
-        placeholder='kwota'
-        />
-
-        <input
-        className='inputValue_invoices' 
-        name='status'
-        value={this.state.status}
-        disabled
-        onChange={this.handlerInvoice}
-        />
-
-        <input
-        className='inputValue_invoices' 
-        name='customerName'
-        type='text'
-        value={this.state.customerName}
-        disabled={iconsBlocked}
-        onChange={this.handlerInvoice}
-        placeholder='customer'
-        />
+        <input className='inputValue_invoices' name='nameInvoice' type='text' value={this.state.nameInvoice} disabled placeholder='Numer fakutry pokaże się po wysłaniu'/>
+        <input className='inputValue_invoices' name='dataInvoice' type='date' value={this.state.dataInvoice} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
+        <input className='inputValue_invoices' name='amountInvoice' type= "Number" value={this.state.amountInvoice} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='kwota'/>
+        <input className='inputValue_invoices' name='status' value={this.state.status} disable onChange={this.handlerInvoice}/>
+        <input className='inputValue_invoices' name='customerName' type='text' value={this.state.customerName} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='customer'/>
 
         <label>
-        <select
-        className='inputValue_invoices' 
-        name="currency"
-        type='text'
-        value={this.state.currency}
-        disabled={iconsBlocked}
-        onChange={this.handlerInvoice}
-        >
+        <select className='inputValue_invoices' name="currency" type='text' value={this.state.currency} disabled={iconsBlocked} onChange={this.handlerInvoice}>
             <option hidden>Select Currency</option>
             <option>PLN</option>
             <option>EUR</option>
