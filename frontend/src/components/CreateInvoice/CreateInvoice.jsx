@@ -13,7 +13,19 @@ class CreateInvoice extends React.Component {
     const initialState = savedData ? JSON.parse(savedData) :  {
         nameInvoice: "",
         dataInvoice: Date,
-        amountInvoice: Number, 
+        dataInvoiceSell: Date,
+        DueDate: Date,
+        PaymentTerm: Date,
+        comments: "",
+        seller: "", 
+        description: "",
+        summaryNetto: Number,
+        summaryVat: Number,
+        summaryBrutto: Number,
+        ExchangeRate: Number,
+        paymentMethod: "Bank transfer",
+        EfectiveMonth: {value: ""},
+        documentStatus: {value: ""},
         status: "invoice being created",
         currency: {value: ""},
         customerName: "",
@@ -59,13 +71,23 @@ handleFormSubmit = (e) => {
     });
 };
 
-
 addNewForms = () => {
 
       this.setState(this.state = {
         nameInvoice: "",
-        dataInvoice: "",
-        amountInvoice: 0, 
+        dataInvoice: null,
+        dataInvoiceSell: null,
+        DueDate: null,
+        PaymentTerm: null,
+        summaryNetto: null,
+        summaryVat: null,
+        summaryBrutto: null,
+        ExchangeRate: null,
+        seller: "", 
+        description: "",
+        paymentMethod: "Bank transfer",
+        EfectiveMonth: "",
+        documentStatus: "",
         status: "invoice being created",
         currency: "",
         customerName: "",
@@ -87,17 +109,46 @@ render(){
         <>
         <h1 className='h1_create_invoices'>Create Invoice manual</h1>
 
+        <form onSubmit={this.handleFormSubmit}>
+            
         <button onClick={this.addNewForms} className='addNewFormButton'>New Forms</button>
-
         <button className='invoiceCreateButton' disabled={iconsBlocked} type='submit'> Send Invoice </button>
-    
-        <form onSubmit={this.handleFormSubmit} className='invoices_forms'>
+        
+        <form className='invoices_forms'>
 
         <input className='inputValue_invoices' name='nameInvoice' type='text' value={this.state.nameInvoice} disabled placeholder='Numer fakutry pokaże się po wysłaniu'/>
-        <input className='inputValue_invoices' name='dataInvoice' type='date' value={this.state.dataInvoice} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
-        <input className='inputValue_invoices' name='amountInvoice' type= "Number" value={this.state.amountInvoice} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='kwota'/>
-        <input className='inputValue_invoices' name='status' value={this.state.status} disable onChange={this.handlerInvoice}/>
+        <input className='inputValue_invoices' name='dataInvoice' type="date" required disabled={iconsBlocked} value={this.state.dataInvoice} onChange={this.handlerInvoice} placeholder='Issue date'/>
+        <input className='inputValue_invoices' name='dataInvoiceSell' type='date' placeholder='Sell-by date' required value={this.state.dataInvoiceSell} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
+        <input className='inputValue_invoices' name='status' value={this.state.status} disabled onChange={this.handlerInvoice}/>
+        <input className='inputValue_invoices' name='seller' type= "text" value={this.state.seller} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Seller'/>
         <input className='inputValue_invoices' name='customerName' type='text' value={this.state.customerName} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='customer'/>
+        <textarea className='inputValue_invoices' name='description' type='text' value={this.state.description} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='description'/>
+        <label>
+        <select className='inputValue_invoices' name="EfectiveMonth" type='text' value={this.state.EfectiveMonth} disabled={iconsBlocked} onChange={this.handlerInvoice}>
+            <option hidden>Efective month</option>
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+        </select>
+        </label>
+
+        <CreateItemInvoice updateItems={this.updateItems} /> 
+        </form>
+
+        <form className="formSummary">
+        <h2 className='summaryh2'>Summary</h2>
+        <input className='inputValue_invoices' type='number' name='summaryNetto' value={this.state.summaryNetto} onChange={this.handlerInvoice} placeholder='Netto' />
+        <input className='inputValue_invoices' type='number' name='summaryVat' value={this.state.summaryVat} onChange={this.handlerInvoice} placeholder='Vat' />
+        <input className='inputValue_invoices' type='number' name='summaryBrutto' value={this.state.summaryBrutto} onChange={this.handlerInvoice} placeholder='Total' />
 
         <label>
         <select className='inputValue_invoices' name="currency" type='text' value={this.state.currency} disabled={iconsBlocked} onChange={this.handlerInvoice}>
@@ -107,11 +158,26 @@ render(){
             <option>USD</option>
         </select>
         </label>
-
-        <CreateItemInvoice updateItems={this.updateItems} />
-
+        <input className='inputValue_invoices' name='paymentMethod' value={this.state.paymentMethod} disabled onChange={this.handlerInvoice} />     
+        <input className='inputValue_invoices' type='number' name='ExchangeRate' value={this.state.ExchangeRate} onChange={this.handlerInvoice} placeholder='Exchange rate' />
+        <input className='inputValue_invoices' name='DueDate' type='date' placeholder='Due Date' required value={this.state.DueDate} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
         </form>
-    
+
+        <form className ="formDetalis">
+        <h2 className='detailsh2'>Details</h2>
+        <select className='inputValue_invoices' name="documentStatus" type='text' value={this.state.documentStatus} disabled={iconsBlocked} onChange={this.handlerInvoice}>
+            <option hidden>Document Status</option>
+            <option>Issued</option>
+            <option>Paid</option>
+            <option>Partly Paid</option>
+            <option>Settled</option>
+            <option>Corrected</option>
+
+        </select>
+        <input className='inputValue_invoices' name='PaymentTerm' type='date' placeholder='Payment term' required value={this.state.PaymentTerm} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
+        <textarea className='inputValue_invoices' name='comments' type='text' value={this.state.comments} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Comments'/>
+        </form>
+        </form>
         </>
 
     ) 
