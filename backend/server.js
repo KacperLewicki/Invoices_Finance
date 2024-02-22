@@ -74,9 +74,21 @@ app.post("/invoice_manualforms", (req, res) => {
     
 const { 
         
-    nameInvoice, 
+    nameInvoice,
     dataInvoice, 
-    amountInvoice, 
+    dataInvoiceSell, 
+    DueDate,
+    PaymentTerm,
+    comments,
+    seller,
+    description,
+    summaryNetto,
+    summaryVat,
+    summaryBrutto,
+    ExchangeRate,
+    paymentMethod,
+    EfectiveMonth,
+    documentStatus,
     currency, 
     status, 
     customerName 
@@ -87,23 +99,47 @@ const {
 const query =
 
 `INSERT INTO invoicemanual (
-    nameInvoice, 
+    nameInvoice,
     dataInvoice, 
-    amountInvoice, 
+    dataInvoiceSell, 
+    DueDate,
+    PaymentTerm,
+    comments,
+    seller,
+    description,
+    summaryNetto,
+    summaryVat,
+    summaryBrutto,
+    ExchangeRate,
+    paymentMethod,
+    EfectiveMonth,
+    documentStatus,
     currency, 
     status, 
-    customerName
+    customerName 
 )
 
-VALUE (?, ?, ?, ?, ?, ?)`;
+VALUE (?, ?, ?, ?, ?, ? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
 const values = [
-    nameInvoice, 
+    nameInvoice,
     dataInvoice, 
-    amountInvoice, 
+    dataInvoiceSell, 
+    DueDate,
+    PaymentTerm,
+    comments,
+    seller,
+    description,
+    summaryNetto,
+    summaryVat,
+    summaryBrutto,
+    ExchangeRate,
+    paymentMethod,
+    EfectiveMonth,
+    documentStatus,
     currency, 
     status, 
-    customerName
+    customerName 
 ];
 
 data.query(query, values, (error, results) => {
