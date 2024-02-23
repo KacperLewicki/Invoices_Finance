@@ -15,7 +15,7 @@ function App() {
     <Link to="/InvoiceListPage"><button 
     className='button_StartMenu'>Invoices List</button></Link> 
     <Link to="/NewsPage"><button 
-    className='button_StartMenu'>News Page</button></Link>
+    className='button_StartMenu'>News</button></Link>
     <Link to="/CreateInvoicePage"><button 
     className='button_StartMenu'>Create Invoice</button></Link>
     </div>
