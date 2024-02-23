@@ -18,7 +18,7 @@ const InvoicesList = () => {
 
     return (
         <div>
-            <h1>Lista Faktur</h1>
+            <h1 className='ListInvoiceH1'>Lista Faktur</h1>
             <ul className='invoice_ul'>
                 {invoices.map(invoice => (
                     <Invoice key={invoice.id} invoice={invoice} />

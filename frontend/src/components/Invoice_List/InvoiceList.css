@@ -1,7 +1,10 @@
-h1 {
+.ListInvoiceH1 {
 
-    text-align:center;
-    padding: 20px;
+    background-color: #0667c9;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
     
 }
 
