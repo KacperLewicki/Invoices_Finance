@@ -1,11 +1,22 @@
-.buttons_Menu{
+.App {
 
+    min-height: 100vh; 
+    overflow: hidden;
+    transition: background-color 2s ease; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.buttons_Menu {
+    display: flex;
+    box-shadow: 0 8px 6px -6px #ddd; 
+    transition: background-color 2s ease; 
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5); 
-    
-}
+    padding: 10px 0; 
+    z-index: 10; 
+} 
 
 .button_StartMenu {
    
@@ -27,3 +38,32 @@
     
     background-color: green; 
 }
+
+.mainContainer {
+
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    min-height: 100%; 
+}
+
+.mainNameCompany {
+
+    font-size: 8em; 
+    color: #333; 
+    margin-top: 10px;
+    padding: 0; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); 
+
+  }
+  
+.aplicationName {
+
+    font-size: 3em; 
+    color: #555; 
+    margin-top: 90px;
+    padding: 10px 0; 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1); 
+    
+  }

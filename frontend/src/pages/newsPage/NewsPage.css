@@ -1,22 +1,128 @@
-.NewsPage_h1 {
+.NewsPage-body {
 
-    color: #333; 
-    font-size: 2.5em; 
-    margin-top: 0; 
-    margin-bottom: 0.5em; 
-    text-align: center; 
-    font-family: Arial, sans-serif; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    
+  }
 
-}
+  .NewsPage-search-container {
 
-.NewsPage_p {
+    display: flex;
+    justify-content: center; 
+    margin: 20px 0; 
 
-    color: #666; 
-    font-size: 1em; 
-    margin-top: 0.5em; 
-    margin-bottom: 1em; 
-    text-align: justify; 
-    padding: 30px;
-    font-family: 'Times New Roman', serif; 
+  }
+  
+  .NewsPage-search {
 
+    width: 100%;
+    max-width: 500px; 
+    padding: 12px 20px; 
+    font-size: 16px; 
+    border: 1px solid #ddd; 
+    border-radius: 25px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+
+  }
+  
+  .NewsPage-search:focus {
+
+    border-color: #3498db; 
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+
+  }
+  
+  .NewsPage-search::placeholder {
+
+    color: #999;
+
+  }
+  
+
+  @media (max-width: 768px) {
+
+    .NewsPage-search {
+      padding: 10px 15px; 
+      font-size: 14px; 
+
+    }
+  }
+
+  .NewsPage-form-container {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; 
+    margin: auto;
+
+  }
+
+  .NewsPage-header {
+
+    background-color: #0667c9;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+
+  }
+  
+  .NewsPage-form {
+
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+  }
+  
+  .NewsPage-title, .NewsPage-subtitle, .NewsPage-date {
+
+    color: #2c3e50;
+
+  }
+  
+  .NewsPage-title {
+
+    margin-bottom: 0.5em;
+
+  }
+  
+  .NewsPage-subtitle, .NewsPage-date {
+
+    font-weight: normal;
+    margin-bottom: 0.3em;
+
+  }
+  
+  .NewsPage-content {
+
+    background-color: #ecf0f1;
+    border-left: 3px solid #3498db;
+    padding: 10px 15px;
+    margin: 20px 0; 
+    border-radius: 4px;
+
+  }
+  
+  .NewsPage-form:hover {
+
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  }
+  
+  @media (max-width: 768px) {
+
+    .NewsPage-form-container {
+      grid-template-columns: 1fr; 
+
+  }
 }

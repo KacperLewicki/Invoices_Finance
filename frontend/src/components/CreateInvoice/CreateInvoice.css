@@ -3,10 +3,22 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     grid-gap: 20px; 
-    padding: 20px;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+
+  }
+
+  .invoices_forms:hover {
+
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 
   }
 
@@ -15,10 +27,21 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     grid-gap: 20px; 
-    padding: 20px;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+  }
+
+  .formSummary:hover {
+
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 
   }
 
@@ -35,10 +58,21 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     grid-gap: 20px; 
-    padding: 20px;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+  }
+
+  .formDetalis:hover {
+
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 
   }
 
@@ -59,11 +93,19 @@
     font-size: 16px;
 
   }
+
+  .inputValue_invoices:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px aqua(0,0,0,0.2);
+  }
   
   .h1_create_invoices {
 
-    color: #007bff; 
+    background-color: #0667c9;
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
+    margin-bottom: 30px;
 
   }
 
@@ -108,17 +150,28 @@
   }
 
   input[type="date"]::before {
+
 	color: #999999;
 	content: attr(placeholder);
+
   }
+
   input[type="date"] {
+
 	color: #ffffff;
+
   }
+
   input[type="date"]:focus,
   input[type="date"]:valid {
+
 	color: #666666;
+
   }
+
   input[type="date"]:focus::before,
   input[type="date"]:valid::before {
+
 	content: "" !important;
+
   }
