@@ -50,6 +50,7 @@
     grid-column: span 3;
     grid-row: span 3;
     color: blue;
+    margin-left: 25px;
 
   }
 
@@ -81,6 +82,7 @@
     grid-column: span 3;
     grid-row: span 3;
     color: blue;
+    margin-left: 25px;
 
   }
   
