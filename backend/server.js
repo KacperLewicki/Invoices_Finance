@@ -95,7 +95,6 @@ const {
 
     } = req.body;
 
-
 const query =
 
 `INSERT INTO invoicemanual (
