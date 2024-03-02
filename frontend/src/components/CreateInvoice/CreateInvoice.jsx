@@ -73,7 +73,7 @@ handleFormSubmit = (e) => {
 
 addNewForms = () => {
 
-      this.setState(this.state = {
+      this.setState({
         nameInvoice: "",
         dataInvoice: null,
         dataInvoiceSell: null,
@@ -98,7 +98,7 @@ addNewForms = () => {
         localStorage.removeItem("invoiceFormData");
         localStorage.removeItem("recordsItem");
 
-        alert("Stworzono nowy formularz.", location.reload());
+        alert("Stworzono nowy formularz.", window.location.reload());
 }
 
 render(){
