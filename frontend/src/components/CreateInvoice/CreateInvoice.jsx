@@ -4,43 +4,65 @@ import CreateItemInvoice from '../../components/CreateInvoiceItem/createInvoiceI
 
 class CreateInvoice extends React.Component {
 
-    constructor(props){
+    constructor(props) {
+        super(props);
+      
 
-    super(props);
+        const savedData = localStorage.getItem('invoiceFormData');
 
-    const savedData = localStorage.getItem('invoiceFormData');
-
-    const initialState = savedData ? JSON.parse(savedData) :  {
-        nameInvoice: "",
-        dataInvoice: Date,
-        dataInvoiceSell: Date,
-        DueDate: Date,
-        PaymentTerm: Date,
-        comments: "",
-        seller: "", 
-        description: "",
-        summaryNetto: Number,
-        summaryVat: Number,
-        summaryBrutto: Number,
-        ExchangeRate: Number,
-        paymentMethod: "Bank transfer",
-        EfectiveMonth: {value: ""},
-        documentStatus: {value: ""},
-        status: "invoice being created",
-        currency: {value: ""},
-        customerName: "",
-        iconsBlocked: false,
-        items: [],
-    };
-
-    this.state = initialState;
-
-  }
-
+        const summaryBrutto = parseFloat(localStorage.getItem('summaryBrutto')) || 0;
+        const summaryNetto = parseFloat(localStorage.getItem('summaryNetto')) || 0;
+        const summaryVat = parseFloat(localStorage.getItem('summaryVat')) || 0;
+      
+        const initialState = savedData ? JSON.parse(savedData) : {
+          nameInvoice: "",
+          dataInvoice: new Date(), 
+          dataInvoiceSell: new Date(),
+          DueDate: new Date(),
+          PaymentTerm: new Date(),
+          comments: "",
+          seller: "",
+          description: "",
+          summaryNetto, 
+          summaryVat, 
+          summaryBrutto, 
+          ExchangeRate: 0,
+          paymentMethod: "Bank transfer",
+          EfectiveMonth: {value: ""},
+          documentStatus: {value: ""},
+          status: "invoice being created",
+          currency: {value: ""},
+          customerName: "",
+          iconsBlocked: false,
+          items: [],
+        };
+      
+        this.state = initialState;
+      }
 updateItems = (newItems) => {
     console.log('Aktualizacja items:', newItems); 
-    this.setState({ items: newItems });
+    this.setState({ items: newItems }, this.updateSummaryCost);
+  
 };
+
+updateSummaryCost = () => {
+    const { items } = this.state;
+
+    const summaryBrutto = items.reduce((score, item) => score + Number(item.bruttoItem), 0);
+    const summaryNetto = items.reduce((score, item) => score + Number(item.nettoItem), 0);
+    const summaryVat = summaryBrutto - summaryNetto;
+
+    this.setState({
+      summaryBrutto,
+      summaryNetto,
+      summaryVat
+    }, () => {
+      localStorage.setItem('summaryBrutto', this.state.summaryBrutto);
+      localStorage.setItem('summaryNetto', this.state.summaryNetto);
+      localStorage.setItem('summaryVat', this.state.summaryVat);
+      localStorage.setItem('invoiceFormData', JSON.stringify(this.state));
+    });
+  };
 
 
 handlerInvoice = (e) => {
@@ -112,7 +134,7 @@ render(){
         <form onSubmit={this.handleFormSubmit}>
             
         <button onClick={this.addNewForms} className='addNewFormButton'>New Forms</button>
-        <button className='invoiceCreateButton' disabled={iconsBlocked} type='submit'> Send Invoice </button>
+
         
         <form className='invoices_forms'>
 
@@ -146,9 +168,9 @@ render(){
 
         <form className="formSummary">
         <h2 className='summaryh2'>Summary</h2>
-        <input className='inputValue_invoices' type='number' name='summaryNetto' value={this.state.summaryNetto} onChange={this.handlerInvoice} placeholder='Netto' />
-        <input className='inputValue_invoices' type='number' name='summaryVat' value={this.state.summaryVat} onChange={this.handlerInvoice} placeholder='Vat' />
-        <input className='inputValue_invoices' type='number' name='summaryBrutto' value={this.state.summaryBrutto} onChange={this.handlerInvoice} placeholder='Total' />
+        <input className='inputValue_invoices' type='Number' name='summaryNetto' value={this.state.summaryNetto} onChange={this.handlerInvoice} placeholder='Netto' disabled />
+        <input className='inputValue_invoices' type='Number' name='summaryVat' value={this.state.summaryVat} onChange={this.handlerInvoice} placeholder='Vat' disabled/>
+        <input className='inputValue_invoices' type='Number' name='summaryBrutto' value={this.state.summaryBrutto} onChange={this.handlerInvoice} placeholder='Total'disabled />
 
         <label>
         <select className='inputValue_invoices' name="currency" type='text' value={this.state.currency} disabled={iconsBlocked} onChange={this.handlerInvoice}>
@@ -159,7 +181,7 @@ render(){
         </select>
         </label>
         <input className='inputValue_invoices' name='paymentMethod' value={this.state.paymentMethod} disabled onChange={this.handlerInvoice} />     
-        <input className='inputValue_invoices' type='number' name='ExchangeRate' value={this.state.ExchangeRate} onChange={this.handlerInvoice} placeholder='Exchange rate' />
+        <input className='inputValue_invoices' type='Number' name='ExchangeRate' value={this.state.ExchangeRate} onChange={this.handlerInvoice} placeholder='Exchange rate' />
         <input className='inputValue_invoices' name='DueDate' type='date' placeholder='Due Date' required value={this.state.DueDate} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
         </form>
 
@@ -176,6 +198,7 @@ render(){
         </select>
         <input className='inputValue_invoices' name='PaymentTerm' type='date' placeholder='Payment term' required value={this.state.PaymentTerm} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
         <textarea className='inputValue_invoices' name='comments' type='text' value={this.state.comments} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Comments'/>
+        <button className='invoiceCreateButton' disabled={iconsBlocked} type='submit'> Send Invoice </button>
         </form>
         </form>
         </>

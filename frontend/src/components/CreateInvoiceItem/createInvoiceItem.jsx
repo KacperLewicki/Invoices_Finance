@@ -49,16 +49,14 @@ class CreateItemInvoice extends React.Component {
 }
 
 deleteItem = (index) => {
-  
     const updatedRecordsItem = [...this.state.recordsItem];
-    
     updatedRecordsItem.splice(index, 1);
-  
     this.setState({ recordsItem: updatedRecordsItem }, () => {
-      localStorage.setItem('recordsItem', JSON.stringify(updatedRecordsItem));
+        localStorage.setItem('recordsItem', JSON.stringify(updatedRecordsItem));
+        this.props.updateItems(updatedRecordsItem); 
     });
-  }
- 
+};
+
 render(){
 
 const {
@@ -86,7 +84,7 @@ return(
     <input name="bruttoItem" className='invoiceFormsItems' type="number" value={bruttoItem} readOnly placeholder='Brutto' />
     <input name = "comment" className='invoiceFormsItems' type ='text' value = {comment} onChange = {(e) => this.setState({comment: e.target.value})} placeholder='comment' />
     
-    <button className='invoiceTableItemsButton' type='button' onClick={this.createInvoiceItem}>Add Item to invoice</button>
+    <button className='invoiceTableItemsButton' type='button' onClick={this.createInvoiceItem}>Add Item</button>
 
     <h2 className='invoiceItems'>Items</h2>
 

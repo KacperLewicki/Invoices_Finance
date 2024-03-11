@@ -97,13 +97,13 @@
   }
 
   .inputValue_invoices:hover {
+
     transform: translateY(-5px);
     box-shadow: 0 5px 15px aqua(0,0,0,0.2);
   }
   
   .h1_create_invoices {
 
-    background-color: #0667c9;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -112,6 +112,9 @@
   }
 
   .invoiceCreateButton {
+    
+    grid-column: 2;
+    grid-row: span 2;
     background-color: #0056b3; 
     color: white;
     border: none;
