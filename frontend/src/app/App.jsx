@@ -44,9 +44,7 @@ function App() {
 
   return (  
 
-
-    <div className="App" style={backgroundStyle}>
-   
+<>  
     <Router>
     <div className='buttons_Menu'>
     <Link to="/"><button 
@@ -58,6 +56,7 @@ function App() {
     <Link to="/CreateInvoicePage"><button 
     className='button_StartMenu'>Create Invoice</button></Link>
     </div>
+    <div className="App" style={backgroundStyle}>
     <Routes>
         <Route path="/InvoiceListPage" 
         element={<InvoiceListPage />} />   
@@ -70,14 +69,11 @@ function App() {
     <div className='mainContainer'>
 
    <h1 className='mainNameCompany'>Frista</h1>
-  <h2 className='aplicationName'>Pay Sprint</h2>
-
-</div>
-    </Router>
-   
-
+   <h2 className='aplicationName'>Pay Sprint</h2>
     </div>
-
+    </div>
+    </Router>
+</>
 )
 }
 

@@ -119,7 +119,9 @@ addNewForms = () => {
 
         localStorage.removeItem("invoiceFormData");
         localStorage.removeItem("recordsItem");
-
+        localStorage.removeItem("summaryBrutto");
+        localStorage.removeItem("summaryNetto");
+        localStorage.removeItem("summaryVat");
         alert("Stworzono nowy formularz.", window.location.reload());
 }
 
@@ -143,7 +145,7 @@ render(){
         <input className='inputValue_invoices' name='dataInvoiceSell' type='date' placeholder='Sell-by date' required value={this.state.dataInvoiceSell} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
         <input className='inputValue_invoices' name='status' value={this.state.status} disabled onChange={this.handlerInvoice}/>
         <input className='inputValue_invoices' name='seller' type= "text" value={this.state.seller} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Seller'/>
-        <input className='inputValue_invoices' name='customerName' type='text' value={this.state.customerName} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='customer'/>
+        <input className='inputValue_invoices' name='customerName' type='text' value={this.state.customerName} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Customer'/>
         <textarea className='inputValue_invoices' name='description' type='text' value={this.state.description} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='description'/>
         <label>
         <select className='inputValue_invoices' name="EfectiveMonth" type='text' value={this.state.EfectiveMonth} disabled={iconsBlocked} onChange={this.handlerInvoice}>
