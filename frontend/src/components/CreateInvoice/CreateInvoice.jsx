@@ -133,10 +133,12 @@ render(){
         <>
         <h1 className='h1_create_invoices'>Create Invoice manual</h1>
 
-        <button type='button' onClick={this.addNewForms} className='addNewFormButton'>New Forms</button>
-        
+       
+
         <form onSubmit={this.handleFormSubmit}>
    
+        <button type='button' onClick={this.addNewForms} className='addNewFormButton'>New Forms</button>
+        
         <form className='invoices_forms'>
 
         <input className='inputValue_invoices' name='nameInvoice' type='text' value={this.state.nameInvoice} disabled placeholder='Numer fakutry pokaże się po wysłaniu'/>

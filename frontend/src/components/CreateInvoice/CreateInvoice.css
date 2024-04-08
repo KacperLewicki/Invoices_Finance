@@ -12,7 +12,6 @@
     overflow: hidden;
     transition: all 0.3s ease;
 
-
   }
 
   .invoices_forms:hover {
@@ -114,7 +113,7 @@
   .invoiceCreateButton {
     
     grid-column: 2;
-    grid-row: span 2;
+    grid-row: 1;
     background-color: #0056b3; 
     color: white;
     border: none;
@@ -135,7 +134,7 @@
   }
 
   .addNewFormButton {
-    
+
     background-color: #0056b3; 
     color: white;
     border: none;
