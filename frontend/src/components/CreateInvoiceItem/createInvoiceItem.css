@@ -8,7 +8,7 @@
 }
 
 .invoiceTableItems {
-    grid-column: 2;
+    
     grid-column: span 3;
     grid-row: span 3; 
     width: calc(100% - 30px); 
@@ -72,7 +72,7 @@
 
     grid-column: span 3;
     grid-row: span 3;
-    color: blue;
+    color: rgb(128, 128, 204);
     margin-left: 25px;
 }
 

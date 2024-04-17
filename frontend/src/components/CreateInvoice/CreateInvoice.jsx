@@ -133,9 +133,7 @@ render(){
         <>
         <h1 className='h1_create_invoices'>Create Invoice manual</h1>
 
-       
-
-        <form onSubmit={this.handleFormSubmit}>
+        <form onSubmit={this.handleFormSubmit} className='MainFormCreateInvoice'>
    
         <button type='button' onClick={this.addNewForms} className='addNewFormButton'>New Forms</button>
         
@@ -201,9 +199,15 @@ render(){
         </select>
         <input className='inputValue_invoices' name='PaymentTerm' type='date' placeholder='Payment term' required value={this.state.PaymentTerm} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
         <textarea className='inputValue_invoices' name='comments' type='text' value={this.state.comments} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Comments'/>
+        
         </form>
+
         <button className='invoiceCreateButton' disabled={iconsBlocked} type='submit'> Send Invoice </button>
+     
+
         </form>
+
+        
         </>
 
     ) 

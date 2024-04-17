@@ -1,3 +1,12 @@
+.MainFormCreateInvoice {
+
+  display: grid;
+  padding: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+
+}
+
 .invoices_forms {
 
     display: grid;
@@ -6,7 +15,7 @@
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
@@ -48,7 +57,7 @@
 
     grid-column: span 3;
     grid-row: span 3;
-    color: blue;
+    color: rgb(128, 128, 204);
     margin-left: 25px;
 
   }
@@ -80,7 +89,7 @@
 
     grid-column: span 3;
     grid-row: span 3;
-    color: blue;
+    color: rgb(128, 128, 204);
     margin-left: 25px;
 
   }
@@ -111,18 +120,20 @@
   }
 
   .invoiceCreateButton {
-    
-    grid-column: 2;
-    grid-row: 1;
+
+  
     background-color: #0056b3; 
     color: white;
     border: none;
-    margin: 20px;
+    margin-left: 600px;
+    margin-right: 600px;
+    margin-top: 20px;
     padding: 10px 20px; 
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
   
 
   }
@@ -138,7 +149,9 @@
     background-color: #0056b3; 
     color: white;
     border: none;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 1200px;
+    margin-bottom: 20px;
     padding: 10px 20px; 
     border-radius: 5px;
     font-size: 16px;
