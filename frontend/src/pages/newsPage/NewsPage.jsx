@@ -106,7 +106,7 @@ const NewsPage = () => {
 
    const [searchTerm, setSearchTerm] = useState('');
    const [articles, setArticles] = useState(initialArticles);
-       
+
  
       const filteredArticles = articles.filter(
 
