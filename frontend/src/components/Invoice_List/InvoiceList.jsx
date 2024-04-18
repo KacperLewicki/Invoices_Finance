@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "./InvoiceList.css";
 import Invoice from '../Invoice/Invoice';
+
 const InvoiceList = () => {
 
     const [invoices, setInvoices] = useState([]);
@@ -45,7 +46,9 @@ const InvoiceList = () => {
                     <p className='Invoice_data'>Status: {invoice.status}</p>
                     <p className='Invoice_data'>Seller: {invoice.seller}</p>
                     <p className='Invoice_data'>Date Invoice Sell: {formatDate(invoice.dataInvoiceSell)}</p>
+                  
                 </div>
+              
             ))}
         </div>
 

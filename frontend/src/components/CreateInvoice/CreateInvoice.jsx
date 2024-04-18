@@ -128,12 +128,12 @@ addNewForms = () => {
 render(){
 
     const { iconsBlocked } = this.state;
-   
+
     return(
         <>
         <h1 className='h1_create_invoices'>Create Invoice manual</h1>
 
-        <form onSubmit={this.handleFormSubmit} className='MainFormCreateInvoice'>
+        <form onSubmit={this.handleFormSubmit}>
    
         <button type='button' onClick={this.addNewForms} className='addNewFormButton'>New Forms</button>
         

@@ -1,12 +1,3 @@
-.MainFormCreateInvoice {
-
-  display: grid;
-  padding: 20px;
-  margin-left: 200px;
-  margin-right: 200px;
-
-}
-
 .invoices_forms {
 
     display: grid;
@@ -121,20 +112,17 @@
 
   .invoiceCreateButton {
 
-  
     background-color: #0056b3; 
     color: white;
     border: none;
-    margin-left: 600px;
-    margin-right: 600px;
     margin-top: 20px;
+    margin-left: 20px;
     padding: 10px 20px; 
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 
-  
 
   }
   
@@ -150,7 +138,6 @@
     color: white;
     border: none;
     margin-left: 20px;
-    margin-right: 1200px;
     margin-bottom: 20px;
     padding: 10px 20px; 
     border-radius: 5px;

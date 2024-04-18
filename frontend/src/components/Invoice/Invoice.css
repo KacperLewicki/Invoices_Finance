@@ -1,5 +1,5 @@
 .invoice {
-   
+
     position: fixed;
     z-index: 2;
     left: 0;
@@ -8,6 +8,14 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.5); 
+}
+
+.invoice_items {
+    list-style-type: none;
+}
+
+.invoice-items_ul {
+    list-style-type: none;
 }
 
 .invoice-content {
