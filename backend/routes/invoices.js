@@ -6,7 +6,8 @@ const pool = require('../config/db.js')
 router.get('/all-invoices', databaseConnection, (req, res) => {
 
     const query = `
-        SELECT invoicemanual.*, invoiceitem.id AS itemId, invoiceitem.nameItem 
+        SELECT invoicemanual.*, invoiceitem.id AS itemId, invoiceitem.nameItem, invoiceitem.comment, invoiceitem.vatItem, 
+        invoiceitem.quantity, invoiceitem.nettoItem, invoiceitem.bruttoItem
         FROM invoicemanual
         LEFT JOIN invoiceitem ON invoiceitem.nameInvoice = invoicemanual.id
     `;
@@ -20,9 +21,11 @@ router.get('/all-invoices', databaseConnection, (req, res) => {
         const invoicesWithItems = results.reduce((acc, curr) => {
             const index = acc.findIndex(item => item.id === curr.id);
             if (index > -1) {
-                acc[index].items.push({ id: curr.itemId, nameItem: curr.nameItem });
+                acc[index].items.push({ id: curr.itemId, nameItem: curr.nameItem, comment: curr.comment, 
+                    vatItem: curr.vatItem, quantity: curr.quantity, nettoItem: curr.nettoItem, bruttoItem: curr.bruttoItem});
             } else {
-                acc.push({...curr, items: curr.itemId ? [{ id: curr.itemId, nameItem: curr.nameItem }] : []});
+                acc.push({...curr, items: curr.itemId ? [{ id: curr.itemId, nameItem: curr.nameItem,  comment: curr.comment, 
+                    vatItem: curr.vatItem, quantity: curr.quantity, nettoItem: curr.nettoItem, bruttoItem: curr.bruttoItem}] : []});
             }
             return acc;
         }, []);
