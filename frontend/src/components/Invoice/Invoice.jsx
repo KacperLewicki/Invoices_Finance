@@ -36,7 +36,7 @@ const Invoice = ({ invoice, onClose }) => {
                        
                         <div className="invoice-section">
                         <p className='customer_name_p'>Data Invoice:<span className='span_p'>{formatDate(invoice.dataInvoice)}</span></p>
-                            <p className='customer_name_p'>Data Invoice Sell:<span className='span_p'>{formatDate(invoice.dataInvoiceSell)}</span></p>
+                            <p className='customer_name_p'>Data Sell:<span className='span_p'>{formatDate(invoice.dataInvoiceSell)}</span></p>
                             <p className='customer_name_p'> Due Date: <span className='span_p'>{formatDate(invoice.DueDate)}</span> </p>
                             <p className='customer_name_p'>Payment Term: <span className='span_p'>{formatDate(invoice.PaymentTerm)}</span> </p>
                         
