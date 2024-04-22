@@ -1,5 +1,7 @@
 import React from 'react';
 import "./Invoice.css";
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 const Invoice = ({ invoice, onClose }) => {
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
@@ -15,9 +17,35 @@ const Invoice = ({ invoice, onClose }) => {
        return result
     }
 
+    const downloadPdf = () => {
+      const invoiceElement = document.getElementById('invoice-content_main');
+ 
+      invoiceElement.style.margin = '2';
+      invoiceElement.style.padding = '2';
+    
+      html2canvas(invoiceElement, {
+
+        onclone: (documentClone) => {
+          const cloneInvoiceElement = documentClone.getElementById('invoice-content_main');
+          cloneInvoiceElement.style.background = 'none';
+        }
+      }).then((canvas) => {
+
+        const orientation = canvas.width > canvas.height ? 'l' : 'p';
+        const pdf = new jsPDF({
+          orientation,
+          unit: 'px',
+          format: [canvas.width, canvas.height] 
+        });
+        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, canvas.width, canvas.height);
+        pdf.save(invoice.nameInvoice);
+      });
+    };
+    
+
     return (
         <div className="invoice" onClick={onClose}>
-            <div className="invoice-content_main" onClick={e => e.stopPropagation()}>
+            <div className="invoice-content_main" id="invoice-content_main" onClick={e => e.stopPropagation()}>
                 <div className="invoice-header">
                     <h2 className='invoice-title'>Faktura {invoice.nameInvoice}</h2>
                 </div>
@@ -114,8 +142,8 @@ const Invoice = ({ invoice, onClose }) => {
     </table>
   </div>
 </div>
-
-            </div>
+<button onClick={downloadPdf}>Pobierz PDF</button>
+            </div>   
         </div>
     );
 };
