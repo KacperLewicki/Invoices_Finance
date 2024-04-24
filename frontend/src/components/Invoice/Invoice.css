@@ -45,10 +45,8 @@
     flex-wrap: wrap;
 }
 
-.invoice-details-left,
-.invoice-details-right {
+.invoice-details-left {
     flex-basis: 24%;
-
 }
 
 .invoice-section {
@@ -58,7 +56,10 @@
 .invoice-details-right {
     display: flex;
     flex-direction: column;
+    flex-basis: 24%;
     align-items: flex-end;
+    margin: 20px;
+  
 }
 
 .invoice-table-container {
@@ -87,7 +88,7 @@
 .invoice-details-table th {
     background-color: #7B68EE;
     color: #ffffff;
-    text-align: left;
+    text-align: center;
 }
 
 .invoice-table tbody tr:nth-child(even) {

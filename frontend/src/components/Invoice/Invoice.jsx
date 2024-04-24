@@ -17,6 +17,12 @@ const Invoice = ({ invoice, onClose }) => {
        return result
     }
 
+    const DECIMAL = (decimal) => {
+
+      const dec = decimal.toFixed(2);
+      return dec
+    }
+
     const downloadPdf = () => {
       const invoiceElement = document.getElementById('invoice-content_main');
  
@@ -27,7 +33,7 @@ const Invoice = ({ invoice, onClose }) => {
 
         onclone: (documentClone) => {
           const cloneInvoiceElement = documentClone.getElementById('invoice-content_main');
-          cloneInvoiceElement.style.background = 'none';
+          cloneInvoiceElement.style.background = 'white';
         }
       }).then((canvas) => {
 
@@ -41,11 +47,11 @@ const Invoice = ({ invoice, onClose }) => {
         pdf.save(invoice.nameInvoice);
       });
     };
-    
 
     return (
         <div className="invoice" onClick={onClose}>
-            <div className="invoice-content_main" id="invoice-content_main" onClick={e => e.stopPropagation()}>
+            <div className="invoice-content_main" onClick={e => e.stopPropagation()}>
+                <div id="invoice-content_main" >
                 <div className="invoice-header">
                     <h2 className='invoice-title'>Faktura {invoice.nameInvoice}</h2>
                 </div>
@@ -91,10 +97,10 @@ const Invoice = ({ invoice, onClose }) => {
                                     <td>{index + 1}</td>
                                     <td>{item.nameItem}</td>
                                     <td>{item.quantity}</td>
-                                    <td>{item.bruttoItem}</td>
-                                    <td>{item.nettoItem}</td>
-                                    <td>{item.vatItem}</td>
-                                    <td>{VAT(item.bruttoItem,item.nettoItem)}</td>
+                                    <td>{DECIMAL(item.bruttoItem)}</td>
+                                    <td>{DECIMAL(item.nettoItem)}</td>
+                                    <td>{item.vatItem + "%"}</td>
+                                    <td>{DECIMAL(VAT(item.bruttoItem,item.nettoItem))}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -128,19 +134,20 @@ const Invoice = ({ invoice, onClose }) => {
       <tbody>
         <tr>
           <td>Summary Netto:</td>
-          <td>{invoice.summaryNetto}</td>
+          <td>{DECIMAL(invoice.summaryNetto)}</td>
         </tr>
         <tr>
           <td>Summary Vat:</td>
-          <td>{invoice.summaryVat}</td>
+          <td>{DECIMAL(invoice.summaryVat)}</td>
         </tr>
         <tr>
           <td>Summary Brutto:</td>
-          <td>{invoice.summaryBrutto}</td>
+          <td>{DECIMAL(invoice.summaryBrutto)}</td>
         </tr>
       </tbody>
     </table>
   </div>
+</div>
 </div>
 <button onClick={downloadPdf}>Pobierz PDF</button>
             </div>   
