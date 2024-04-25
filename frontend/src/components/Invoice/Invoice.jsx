@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./Invoice.css";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import CreditNoteInvoice from '../CreditNote/invoiceCreditNote';
 
 const Invoice = ({ invoice, onClose }) => {
-    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    
+  const [showCreditNote, setShowCreditNote] = useState(false);
+  
+  const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+
+
 
     const formatDate = (datestring) => {
         const date = new Date(datestring);
@@ -15,13 +21,13 @@ const Invoice = ({ invoice, onClose }) => {
        const result =  brutto - netto;
 
        return result
-    }
+    };
 
     const DECIMAL = (decimal) => {
 
       const dec = decimal.toFixed(2);
       return dec
-    }
+    };
 
     const downloadPdf = () => {
       const invoiceElement = document.getElementById('invoice-content_main');
@@ -48,9 +54,24 @@ const Invoice = ({ invoice, onClose }) => {
       });
     };
 
+  const handleButtonClick = () => {
+
+      setShowCreditNote(true);  
+
+  };
+
+  
     return (
         <div className="invoice" onClick={onClose}>
+         
+         {showCreditNote && (
+            <div className="credit-note-overlay" onClick={e => e.stopPropagation()}>
+                 <CreditNoteInvoice invoice={invoice} onClose={onClose} />     
+            </div>
+        )}
+
             <div className="invoice-content_main" onClick={e => e.stopPropagation()}>
+          
                 <div id="invoice-content_main" >
                 <div className="invoice-header">
                     <h2 className='invoice-title'>Faktura {invoice.nameInvoice}</h2>
@@ -149,7 +170,9 @@ const Invoice = ({ invoice, onClose }) => {
   </div>
 </div>
 </div>
+
 <button onClick={downloadPdf}>Pobierz PDF</button>
+<button onClick={handleButtonClick}>Credit Note</button>
             </div>   
         </div>
     );

@@ -53,7 +53,7 @@ const InvoiceList = () => {
         </div>
 
         {selectedInvoice && <Invoice invoice={selectedInvoice} onClose={closeInvoice} />}
-
+        
         </>
     );
 };
