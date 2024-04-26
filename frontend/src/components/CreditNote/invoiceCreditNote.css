@@ -8,3 +8,70 @@
     overflow-y: auto;
 
 }
+
+.invoice-table-container {
+    grid-column: span 3;
+    grid-row: span 3;
+    margin-top: 30px;
+    text-align: center;
+  
+
+}
+
+.invoiceCreditNote {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 14px; 
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+}
+
+.inputCreditNote {
+    
+    width: 100%; 
+    padding: 2px;
+    border: 1px solid #007bff; 
+    border-radius: 5px;
+    font-size: 12px;
+
+}
+
+.h1CreditNote {
+
+    grid-column: 2;
+    grid-row: span 1;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.inputCreditNoteFirstElement {
+    grid-column: 1;
+    grid-row: span 1;
+    width: 100%; 
+    padding: 2px;
+    border: 1px solid #007bff; 
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.inputTableInvoiceCreditNote {
+
+    width: 100%;
+    height: 100%;
+
+}
+
+.inputCreditNoteFirstElementCreditNote {
+
+    grid-column: 1;
+
+}
