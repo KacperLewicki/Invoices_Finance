@@ -3,18 +3,38 @@
     background-color: #fefefe;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     overflow-y: auto;
 
 }
 
 .invoice-table-container {
+
     grid-column: span 3;
     grid-row: span 3;
     margin-top: 30px;
     text-align: center;
+ 
+}
+
+.buttonCreateCreditNote {
+
+    grid-column: 2;
+    background-color: #0056b3; 
+    color: white;
+    border: none;
+    margin: 10px;
+    padding: 10px 20px; 
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   
+}
+
+.buttonOnCLose {
+   
+    width: 6%;
 
 }
 
@@ -22,7 +42,7 @@
 
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    grid-gap: 14px; 
+    grid-gap: 30px; 
     justify-content: center;
     align-items: center;
     background-color: #fff;
@@ -36,7 +56,7 @@
 
 .inputCreditNote {
     
-    width: 100%; 
+    height: 150%;
     padding: 2px;
     border: 1px solid #007bff; 
     border-radius: 5px;
@@ -54,9 +74,10 @@
 }
 
 .inputCreditNoteFirstElement {
+
+    height: 150%;
     grid-column: 1;
     grid-row: span 1;
-    width: 100%; 
     padding: 2px;
     border: 1px solid #007bff; 
     border-radius: 5px;
@@ -71,7 +92,8 @@
 }
 
 .inputCreditNoteFirstElementCreditNote {
-
+ 
+    height: 150%;
     grid-column: 1;
 
 }

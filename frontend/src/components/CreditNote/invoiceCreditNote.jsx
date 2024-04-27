@@ -1,7 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./invoiceCreditNote.css";
 
 const CreditNoteInvoice = ({ invoice, onClose}) => {
+
+    const [inputCreditNote_formData, setinputCreditNote_formData] = useState({
+   
+    })
+
+    const handleChange = (e) => {
+
+        const {name, value} = e.target;
+
+        setinputCreditNote_formData(prevState => ({
+
+            ...prevState,
+            [name]: value
+        }));
+
+    }
 
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
 
@@ -26,10 +42,10 @@ const CreditNoteInvoice = ({ invoice, onClose}) => {
         <div className="MainScreenCreditNote">
 
             <form className='invoiceCreditNote'>
-
+            <button className='buttonOnCLose' onClick={onClose}>X</button>
             <h1 className='h1CreditNote'>Credit Note</h1>
-            <input className='inputCreditNoteFirstElementCreditNote' placeholder="Create Number CreditNote" />
-            <input className='inputCreditNoteFirstElement' defaultValue={invoice.nameInvoice} />
+            <input name='CreditNote' className='inputCreditNoteFirstElementCreditNote' placeholder="Create Number CreditNote" />
+            <input name='invoiceName' value={inputCreditNote_formData.name} onChange={handleChange} className='inputCreditNoteFirstElement' defaultValue={invoice.nameInvoice} />
             <input className='inputCreditNote' defaultValue={formatDate(invoice.dataInvoice)} />
             <input className='inputCreditNote' defaultValue={formatDate(invoice.dataInvoiceSell)} />
             <input className='inputCreditNote' defaultValue={formatDate(invoice.DueDate)} />
@@ -76,10 +92,8 @@ const CreditNoteInvoice = ({ invoice, onClose}) => {
             <input className='inputCreditNote' defaultValue={invoice.status} />
             <input className='inputCreditNote' defaultValue={invoice.currency} />
 
-            <button>Create Credit Note</button>
-    
-            <button onClick={onClose}>Zamknij</button>
-
+            <button className='buttonCreateCreditNote'>Create Credit Note</button>
+ 
             </form>
         </div>
     );
