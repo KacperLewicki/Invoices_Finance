@@ -4,6 +4,7 @@ import NewsPage from '../pages/newsPage/NewsPage';
 import "./App.css";
 import CreateInvoicePage from '../pages/CreateInvoicePage/CreateInvoicePage.jsx';
 import React, { useState, useEffect } from 'react';
+import { CreditNotePage } from '../pages/creditNotePage/creditNotePage';
 
 function App() {
 
@@ -51,6 +52,8 @@ function App() {
     className='button_StartMenu'>Home</button></Link>
     <Link to="/InvoiceListPage"><button 
     className='button_StartMenu'>Invoices List</button></Link> 
+    <Link to="/CreditNotePage"><button 
+    className='button_StartMenu'>Credit_Note List</button></Link> 
     <Link to="/NewsPage"><button 
     className='button_StartMenu'>News</button></Link>
     <Link to="/CreateInvoicePage"><button 
@@ -60,6 +63,8 @@ function App() {
     <Routes>
         <Route path="/InvoiceListPage" 
         element={<InvoiceListPage />} />   
+         <Route path="/CreditNotePage" 
+        element={<CreditNotePage />} />   
         <Route path='/NewsPage' 
         element={<NewsPage />}></Route>
         <Route path='/CreateInvoicePage' 

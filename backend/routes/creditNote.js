@@ -1,4 +1,7 @@
+const express = require('express');
 const pool = require("../config/db");
+const databaseConnection = require('../middleware/databaseConnection');
+const router = express.Router();
 
 const getLastCreditNoteNumber = () => {
     return new Promise((resolve, reject) => {
@@ -10,7 +13,6 @@ const getLastCreditNoteNumber = () => {
       });
     });
   };
-  
 
   const saveCreditNoteAndItems = (creditNoteData, items) => {
     return new Promise((resolve, reject) => {
@@ -45,10 +47,10 @@ const getLastCreditNoteNumber = () => {
   
               const itemPromises = items.map(item => {
                 return new Promise((itemResolve, itemReject) => {
-                  const { itemName, quantity, bruttoItem, nettoItem, vatItem, vatAmount } = item;
+                  const { nameItem, quantity, bruttoItem, nettoItem, vatItem } = item;
                   connection.query(
-                    'INSERT INTO creditnoteitems (creditNoteId, itemName, quantity, bruttoItem, nettoItem, vatItem, vatAmount) VALUES (?, ?, ?, ?, ?, ?, ?)',
-                    [creditNoteId, itemName, quantity, bruttoItem, nettoItem, vatItem, vatAmount],
+                    'INSERT INTO creditnoteitems (creditNoteId, itemName, quantity, bruttoItem, nettoItem, vatItem) VALUES (?, ?, ?, ?, ?, ?)',
+                    [creditNoteId, nameItem, quantity, bruttoItem, nettoItem, vatItem],
                     (itemError) => {
                       if (itemError) {
                         return itemReject(itemError);
@@ -84,8 +86,21 @@ const getLastCreditNoteNumber = () => {
       });
     });
   };
-  
-module.exports = {
-  getLastCreditNoteNumber,
-  saveCreditNoteAndItems,
-};
+
+router.post('/api/SaveCreditNote',databaseConnection, async (req, res) => {
+  try {
+    const lastCreditNoteNumber = await getLastCreditNoteNumber();
+    const lastNumber = lastCreditNoteNumber ? parseInt(lastCreditNoteNumber.split('/')[1], 10) : 0;
+    const newNumber = lastNumber + 1;
+    const yearPart = new Date().getFullYear().toString().slice(-2);
+    const newCreditNoteNumber = `CN/${String(newNumber).padStart(4, '0')}/${yearPart}`;
+
+    const creditNoteId = await saveCreditNoteAndItems({ ...req.body, CreditNote: newCreditNoteNumber }, req.body.items);
+    res.status(201).json({ message: 'Credit Note saved successfully', creditNoteId, newCreditNoteNumber });
+  } catch (error) {
+    console.error('Error in processing the Credit Note:', error);
+    res.status(500).json({ message: error.message || 'Failed to process the Credit Note.' });
+  }
+});
+
+module.exports = router;
