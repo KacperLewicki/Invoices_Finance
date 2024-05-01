@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import "./invoiceCreditNote.css";
 import axios from 'axios';
 
@@ -22,7 +22,7 @@ const CreditNoteInvoice = ({ invoice, onClose }) => {
         summaryVat: null,
         ExchangeRate: invoice.ExchangeRate || "",
         paymentMethod: invoice.paymentMethod || "",
-        EffectiveMonth: invoice.EffectiveMonth || "",
+        EffectiveMonth: invoice.EfectiveMonth || "",
         documentStatus: invoice.documentStatus || "",
         status: invoice.status || "",
         currency: invoice.currency || ""

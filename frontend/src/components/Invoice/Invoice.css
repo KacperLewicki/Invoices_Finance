@@ -1,4 +1,5 @@
 .invoice {
+
     position: fixed;
     z-index: 100;
     left: 0;
@@ -10,9 +11,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .credit-note-overlay {
+
     position: fixed; 
     top: 0;
     left: 0;
@@ -26,13 +29,14 @@
     
 }
 
-
 .span_p {
+
     margin-left: 6px;
     color: gray;
 }
 
 .invoice-content_main {
+
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
@@ -41,109 +45,157 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     max-height: 90vh;
     overflow-y: auto;
+
 }
 
 .invoice-header {
+
     text-align: center;
     margin-bottom: 30px;
+
 }
 
 .invoice-title {
+
     font-size: 24px;
     margin: 10px 0;
+
 }
 
 .invoice-details {
+
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+
 }
 
 .invoice-details-left {
+
     flex-basis: 24%;
+
 }
 
 .invoice-section {
+
     margin-bottom: 20px;
+
 }
 
 .invoice-details-right {
+
     display: flex;
     flex-direction: column;
     flex-basis: 24%;
     align-items: flex-end;
     margin: 20px;
-  
+
+}
+
+.buttonInvoiceList {
+
+    background-color: #535c5e9d; 
+    color: white;
+    border: none;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px 20px; 
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
 }
 
 .invoice-table-container {
+
     margin-top: 30px;
     text-align: center;
+
 }
 
 .invoice-table,
 .invoice-details-table {
+
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .invoice-table th,
 .invoice-table td,
 .invoice-details-table th,
 .invoice-details-table td {
+
     padding: 10px;
     border: 1px solid #7B68EE;
     background-color: #E6E6FA;
+
 }
 
 .invoice-table th,
 .invoice-details-table th {
+
     background-color: #7B68EE;
     color: #ffffff;
     text-align: center;
+
 }
 
 .invoice-table tbody tr:nth-child(even) {
+
     background-color: #f2f2f2;
+
 }
 
 .customer_name_p {
+
     font-weight: bold;
+    
 }
 
 .close {
+
     color: #aaa;
     font-size: 28px;
     font-weight: bold;
     position: absolute;
     right: 25px;
     top: 25px;
+
 }
 
 .close:hover,
 .close:focus {
+
     color: black;
     text-decoration: none;
     cursor: pointer;
+
 }
 
 @media (min-width: 768px) {
+
     .invoice-details-left,
     .invoice-details-right {
         flex-basis: 24%; 
         margin-right: 2%; 
+
     }
 
     .invoice-details-right {
+
         flex-basis: 24%;
         margin-right: 0; 
+
 }
 }
 
 @media (max-width: 768px) {
+
     .invoice-content_main {
         width: 95%;
         margin: 10% auto;

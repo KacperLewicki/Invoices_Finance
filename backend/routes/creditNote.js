@@ -28,13 +28,13 @@ const getLastCreditNoteNumber = () => {
           }
   
           const {
-            CreditNote, invoiceName, dataInvoice, dataInvoiceSell, DueDate, PaymentTerm, comments, seller, 
+            CreditNote, invoiceName, dataInvoice, dataInvoiceSell, DueDate, PaymentTerm, comments, seller,  summaryNetto, summaryBrutto, summaryVat,
             customerName, description, ExchangeRate, paymentMethod, EffectiveMonth, documentStatus, status, currency
           } = creditNoteData;
           
           connection.query(
-            'INSERT INTO creditnotesinvoices (CreditNote, invoiceName, dataInvoice, dataInvoiceSell, DueDate, PaymentTerm, comments, seller, customerName, description, ExchangeRate, paymentMethod, EffectiveMonth, documentStatus, status, currency) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-            [CreditNote, invoiceName, dataInvoice, dataInvoiceSell, DueDate, PaymentTerm, comments, seller, customerName, description, ExchangeRate, paymentMethod, EffectiveMonth, documentStatus, status, currency],
+            'INSERT INTO creditnotesinvoices (CreditNote, invoiceName, dataInvoice, dataInvoiceSell, DueDate, PaymentTerm, comments, seller,  summaryNetto, summaryBrutto, summaryVat, customerName, description, ExchangeRate, paymentMethod, EffectiveMonth, documentStatus, status, currency) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            [CreditNote, invoiceName, dataInvoice, dataInvoiceSell, DueDate, PaymentTerm, comments, seller, summaryNetto, summaryBrutto, summaryVat, customerName, description, ExchangeRate, paymentMethod, EffectiveMonth, documentStatus, status, currency],
             (error, creditNoteResult) => {
               if (error) {
                 return connection.rollback(() => {

@@ -1,0 +1,56 @@
+.ListInvoiceH1 {
+
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    
+}
+
+.invoice_div {
+ 
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 20px; 
+    margin: 20px; 
+}
+
+.Invoice_fv  {
+
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+}
+
+.Invoice_fv:hover  {
+
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.Invoice_title {
+
+    text-align: center; 
+    color: #333; 
+    margin-bottom: 16px;
+
+}
+
+.Invoice_data {
+
+    color: #555; 
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    margin: 8px 0;
+    font-family: 'Arial', sans-serif;
+
+}

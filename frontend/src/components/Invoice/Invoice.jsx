@@ -10,8 +10,6 @@ const Invoice = ({ invoice, onClose }) => {
   
   const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
 
-
-
     const formatDate = (datestring) => {
         const date = new Date(datestring);
         return date.toLocaleDateString('en-CA', options);
@@ -60,13 +58,12 @@ const Invoice = ({ invoice, onClose }) => {
 
   };
 
-  
     return (
         <div className="invoice" onClick={onClose}>
          
          {showCreditNote && (
             <div className="credit-note-overlay" onClick={e => e.stopPropagation()}>
-                 <CreditNoteInvoice invoice={invoice} onClose={onClose} />     
+                 <CreditNoteInvoice invoice={invoice} onClose={onClose} />          
             </div>
         )}
 
@@ -171,8 +168,8 @@ const Invoice = ({ invoice, onClose }) => {
 </div>
 </div>
 
-<button onClick={downloadPdf}>Pobierz PDF</button>
-<button onClick={handleButtonClick}>Credit Note</button>
+<button className='buttonInvoiceList' onClick={downloadPdf}>Pobierz PDF</button>
+<button className='buttonInvoiceList' onClick={handleButtonClick}>Credit Note</button>
             </div>   
         </div>
     );
