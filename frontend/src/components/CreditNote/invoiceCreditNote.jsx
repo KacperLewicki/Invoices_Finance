@@ -89,34 +89,48 @@ const CreditNoteInvoice = ({ invoice, onClose }) => {
             { nameItem: '', quantity: 1, bruttoItem: 0, nettoItem: 0, vatItem: 23, unitNetto: 0 } 
           ]
         }));
-      }, []);
+    }, []);
+
+    const handleRemoveItem = useCallback((index) => {
+
+        setInputCreditNote_formData(prevData => ({
+            ...prevData,
+            items: prevData.items.filter((item, i) => i !== index)     
+        }));
+
+    }, []);
+    
       
     
-      const VAT = (brutto, netto) => {
+    const VAT = (brutto, netto) => {
         
         return (Number(brutto) - Number(netto)).toFixed(2);
 
-      };
+    };
 
     
       
     const handleChange = (e) => {
+
         const { name, value } = e.target;
         setInputCreditNote_formData(prevState => ({
             ...prevState,
             [name]: value
         }));
+
     };
 
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
 
     const formatDate = (datestring) => {
+
         const date = new Date(datestring);
         return date.toLocaleDateString('en-CA', options);
     };
 
     
     const handleSubmit = async (e) => {
+
         e.preventDefault();
     
         const formDataToSend = {
@@ -180,12 +194,10 @@ const CreditNoteInvoice = ({ invoice, onClose }) => {
                                     <td><input type='number' value={item.nettoItem.toFixed(2)} onChange={(e) => handleInputChange(index, 'nettoItem', e.target.value)} /></td>
                                     <td><input type='number'  value={item.vatItem} onChange={(e) => handleInputChange(index, 'vatItem', e.target.value)} /></td>
                                     <td>{VAT(item.bruttoItem, item.nettoItem)}</td>
+                                    <td><button className='buttonTable_delete' type='button' onClick={() => handleRemoveItem(index)}>Delete</button></td>
                                 </tr>
                                 ))}
-
-                                <tr>
-                                     <td colSpan="7"><button type='button' onClick={handleAddNewItem}>+</button></td>
-                                </tr>
+                                <tr><td colSpan="7"><button className='buttonTable_plus' type='button' onClick={handleAddNewItem}>+</button></td></tr>
                             </tbody>
                     </table>
                 </div>
