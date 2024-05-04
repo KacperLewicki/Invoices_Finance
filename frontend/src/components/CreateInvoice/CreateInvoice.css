@@ -5,39 +5,18 @@
     grid-gap: 20px; 
     justify-content: center;
     align-items: center;
+    margin-left: 200px;
+    margin-right: 200px;
     background-color: #fff;
     padding: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
     transition: all 0.3s ease;
-
+    
   }
 
   .invoices_forms:hover {
-
-    transform: translateY(-10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-
-  }
-
-  .formSummary {
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-gap: 20px; 
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-
-  }
-
-  .formSummary:hover {
 
     transform: translateY(-10px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -53,29 +32,6 @@
 
   }
 
-  .formDetalis {
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-gap: 20px; 
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-
-  }
-
-  .formDetalis:hover {
-
-    transform: translateY(-10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-
-  }
-
   .detailsh2 {
 
     grid-column: span 3;
@@ -86,7 +42,7 @@
   }
   
   .inputValue_invoices {
-
+  
     width: 100%; 
     padding: 15px;
     border: 1px solid #007bff; 
@@ -112,19 +68,22 @@
 
   .invoiceCreateButton {
 
-    background-color: #0056b3; 
+    grid-column: 2;
+    grid-row: 27;
+    width: fit-content;  
+    justify-self: center;  
+    align-items: center;
+    background-color: #0056b3;
     color: white;
     border: none;
     margin-top: 20px;
-    margin-left: 20px;
-    padding: 10px 20px; 
+    padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
 
-
-  }
   
   .invoiceCreateButton:hover {
 
@@ -134,11 +93,15 @@
 
   .addNewFormButton {
 
+    grid-column: 1/-1;
+    grid-row: 1;
     background-color: #0056b3; 
     color: white;
     border: none;
-    margin-left: 20px;
-    margin-bottom: 20px;
+    width: fit-content;
+    justify-self: start;
+    align-items: center;
+    margin: 10px;
     padding: 10px 20px; 
     border-radius: 5px;
     font-size: 16px;
@@ -179,3 +142,31 @@
 	content: "" !important;
 
   }
+
+@media (max-width: 1024px) {
+
+  .invoices_forms {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .invoices_forms {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .invoices_forms {
+        margin-left: 0px; 
+        margin-right: 0px;
+    }
+    
+}
+

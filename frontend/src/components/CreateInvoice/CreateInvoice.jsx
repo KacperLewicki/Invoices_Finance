@@ -131,13 +131,11 @@ render(){
 
     return(
         <>
-        <h1 className='h1_create_invoices'>Create Invoice manual</h1>
-
-        <form onSubmit={this.handleFormSubmit}>
+        <h1 className='h1_create_invoices'>Create Invoice manual</h1> 
    
+        <form className='invoices_forms' onSubmit={this.handleFormSubmit}>
+
         <button type='button' onClick={this.addNewForms} className='addNewFormButton'>New Forms</button>
-        
-        <form className='invoices_forms'>
 
         <input className='inputValue_invoices' name='nameInvoice' type='text' value={this.state.nameInvoice} disabled placeholder='Numer fakutry pokaże się po wysłaniu'/>
         <input className='inputValue_invoices' name='dataInvoice' type="date" required disabled={iconsBlocked} value={this.state.dataInvoice} onChange={this.handlerInvoice} placeholder='Issue date'/>
@@ -165,9 +163,7 @@ render(){
         </label>
 
         <CreateItemInvoice updateItems={this.updateItems} /> 
-        </form>
-
-        <form className="formSummary">
+       
         <h2 className='summaryh2'>Summary</h2>
         <input className='inputValue_invoices' type='Number' name='summaryNetto' value={this.state.summaryNetto} onChange={this.handlerInvoice} placeholder='Netto' disabled />
         <input className='inputValue_invoices' type='Number' name='summaryVat' value={this.state.summaryVat} onChange={this.handlerInvoice} placeholder='Vat' disabled/>
@@ -184,9 +180,9 @@ render(){
         <input className='inputValue_invoices' name='paymentMethod' value={this.state.paymentMethod} disabled onChange={this.handlerInvoice} />     
         <input className='inputValue_invoices' type='Number' name='ExchangeRate' value={this.state.ExchangeRate} onChange={this.handlerInvoice} placeholder='Exchange rate' />
         <input className='inputValue_invoices' name='DueDate' type='date' placeholder='Due Date' required value={this.state.DueDate} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
-        </form>
+     
 
-        <form className ="formDetalis">
+       
         <h2 className='detailsh2'>Details</h2>
         <select className='inputValue_invoices' name="documentStatus" type='text' value={this.state.documentStatus} disabled={iconsBlocked} onChange={this.handlerInvoice}>
             <option hidden>Document Status</option>
@@ -200,14 +196,8 @@ render(){
         <input className='inputValue_invoices' name='PaymentTerm' type='date' placeholder='Payment term' required value={this.state.PaymentTerm} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
         <textarea className='inputValue_invoices' name='comments' type='text' value={this.state.comments} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Comments'/>
         
-        </form>
-
         <button className='invoiceCreateButton' disabled={iconsBlocked} type='submit'> Send Invoice </button>
-     
-
-        </form>
-
-        
+        </form> 
         </>
 
     ) 
