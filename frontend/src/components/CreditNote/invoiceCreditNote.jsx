@@ -108,8 +108,7 @@ const CreditNoteInvoice = ({ invoice, onClose }) => {
 
     };
 
-    
-      
+
     const handleChange = (e) => {
 
         const { name, value } = e.target;

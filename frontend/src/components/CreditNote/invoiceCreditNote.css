@@ -86,9 +86,10 @@
     grid-column: 1;
     grid-row: span 1;
     padding: 2px;
-    border: 1px solid #007bff; 
+    border: 1px solid #007bff;
     border-radius: 5px;
     font-size: 12px;
+
 }
 
 .inputTableInvoiceCreditNote {
@@ -112,8 +113,6 @@
     padding: 4px;
 
 }
-
-
 
 .buttonTable_delete {
    
