@@ -160,16 +160,16 @@ const CreditNoteInvoice = ({ invoice, onClose }) => {
             <form className='invoiceCreditNote' onSubmit={handleSubmit}>
                 <button className='buttonOnCLose' onClick={onClose}>X</button>
                 <h1 className='h1CreditNote'>Credit Note</h1>
-                <input name='CreditNote' value={inputCreditNote_formData.CreditNote} onChange={handleChange} className='inputCreditNoteFirstElementCreditNote' placeholder="Create Number CreditNote" />
-                <input name='invoiceName' value={inputCreditNote_formData.invoiceName} onChange={handleChange} className='inputCreditNoteFirstElement' />
-                <input name='dataInvoice' value={formatDate(inputCreditNote_formData.dataInvoice)} onChange={handleChange} className='inputCreditNote' />
-                <input name='dataInvoiceSell' value={formatDate(inputCreditNote_formData.dataInvoiceSell)} onChange={handleChange} className='inputCreditNote' />
-                <input name='DueDate' value={formatDate(inputCreditNote_formData.DueDate)} onChange={handleChange} className='inputCreditNote' />
-                <input name='PaymentTerm' value={formatDate(inputCreditNote_formData.PaymentTerm)} onChange={handleChange} className='inputCreditNote' />
-                <input name='comments' value={inputCreditNote_formData.comments} onChange={handleChange} className='inputCreditNote' />
-                <input name='seller' value={inputCreditNote_formData.seller} onChange={handleChange} className='inputCreditNote' />
-                <input name='customerName' value={inputCreditNote_formData.customerName} onChange={handleChange} className='inputCreditNote' />
-                <input name='description' value={inputCreditNote_formData.description} onChange={handleChange} className='inputCreditNote' />
+                <input name='CreditNote' value={inputCreditNote_formData.CreditNote} onChange={handleChange} className='inputCreditNoteFirstElementCreditNote' placeholder="Create Number CreditNote" />   
+                <input title="Invoice Name" name='invoiceName' value={inputCreditNote_formData.invoiceName} onChange={handleChange} className='inputCreditNoteFirstElement' />
+                <input title="Data Invoice" name='dataInvoice' value={formatDate(inputCreditNote_formData.dataInvoice)} onChange={handleChange} className='inputCreditNote' />
+                <input title="Data Invoice Sell" name='dataInvoiceSell' value={formatDate(inputCreditNote_formData.dataInvoiceSell)} onChange={handleChange} className='inputCreditNote' />
+                <input title="Due Date" name='DueDate' value={formatDate(inputCreditNote_formData.DueDate)} onChange={handleChange} className='inputCreditNote' />
+                <input title="Payment Term" name='PaymentTerm' value={formatDate(inputCreditNote_formData.PaymentTerm)} onChange={handleChange} className='inputCreditNote' />
+                <input title="Comments" name='comments' value={inputCreditNote_formData.comments} onChange={handleChange} className='inputCreditNote' />
+                <input title="Seller" name='seller' value={inputCreditNote_formData.seller} onChange={handleChange} className='inputCreditNote' />
+                <input title="Customer Name" name='customerName' value={inputCreditNote_formData.customerName} onChange={handleChange} className='inputCreditNote' />
+                <input title="Description" name='description' value={inputCreditNote_formData.description} onChange={handleChange} className='inputCreditNote' />
                 <div className="invoice-table-container">
                     <table className="invoice-table">
                         <thead>
@@ -200,15 +200,15 @@ const CreditNoteInvoice = ({ invoice, onClose }) => {
                             </tbody>
                     </table>
                 </div>
-                <input name='summaryNetto' type="number" value={inputCreditNote_formData.summaryNetto} onChange={handleChange} className='inputCreditNote' defaultValue={inputCreditNote_formData.summaryNetto} />
-                <input name='summaryBrutto' type="number" value={inputCreditNote_formData.summaryBrutto} onChange={handleChange} className='inputCreditNote' defaultValue={inputCreditNote_formData.summaryBrutto} />
-                <input name='summaryVat' type="number" value={inputCreditNote_formData.summaryVat} onChange={handleChange} className='inputCreditNote' defaultValue={inputCreditNote_formData.summaryVat} />
-                <input name='ExchangeRate' value={inputCreditNote_formData.ExchangeRate} onChange={handleChange} className='inputCreditNote' />
-                <input name='paymentMethod' value={inputCreditNote_formData.paymentMethod} onChange={handleChange} className='inputCreditNote' />
-                <input name='EffectiveMonth' value={inputCreditNote_formData.EffectiveMonth} onChange={handleChange} className='inputCreditNote' />
-                <input name='documentStatus' value={inputCreditNote_formData.documentStatus} onChange={handleChange} className='inputCreditNote' />
-                <input name='status' value={inputCreditNote_formData.status} onChange={handleChange} className='inputCreditNote' />
-                <input name='currency' value={inputCreditNote_formData.currency} onChange={handleChange} className='inputCreditNote' />
+                <input title="Summary Netto" name='summaryNetto' type="number" value={inputCreditNote_formData.summaryNetto} onChange={handleChange} className='inputCreditNote' defaultValue={inputCreditNote_formData.summaryNetto} />
+                <input title="Summary Brutto" name='summaryBrutto' type="number" value={inputCreditNote_formData.summaryBrutto} onChange={handleChange} className='inputCreditNote' defaultValue={inputCreditNote_formData.summaryBrutto} />
+                <input title="Summary Vat" name='summaryVat' type="number" value={inputCreditNote_formData.summaryVat} onChange={handleChange} className='inputCreditNote' defaultValue={inputCreditNote_formData.summaryVat} />
+                <input title="Exchange Rate" name='ExchangeRate' value={inputCreditNote_formData.ExchangeRate} onChange={handleChange} className='inputCreditNote' />
+                <input title="Payment Method" name='paymentMethod' value={inputCreditNote_formData.paymentMethod} onChange={handleChange} className='inputCreditNote' />
+                <input title="Effective Month" name='EffectiveMonth' value={inputCreditNote_formData.EffectiveMonth} onChange={handleChange} className='inputCreditNote' />
+                <input title="Document Status" name='documentStatus' value={inputCreditNote_formData.documentStatus} onChange={handleChange} className='inputCreditNote' />
+                <input title="Status" name='status' value={inputCreditNote_formData.status} onChange={handleChange} className='inputCreditNote' />
+                <input title="Currency" name='currency' value={inputCreditNote_formData.currency} onChange={handleChange} className='inputCreditNote' />
 
                 <button className='buttonCreateCreditNote' type='submit'>Create Credit Note</button>
             </form>
