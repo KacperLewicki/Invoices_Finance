@@ -41,10 +41,9 @@ const InvoiceListCreditNote = ({ creditNoteInvoice, onClose }) => {
           format: [canvas.width, canvas.height] 
         });
         pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, canvas.width, canvas.height);
-        pdf.save(creditNoteInvoice.nameInvoice);
+        pdf.save(creditNoteInvoice.CreditNote);
       });
     };
-
 
     return (
       <>
