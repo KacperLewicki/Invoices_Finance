@@ -6,8 +6,8 @@ import Invoice from '../Invoice/Invoice';
 const InvoiceList = () => {
 
     const [invoices, setInvoices] = useState([]);
-
     const [selectedInvoice, setSelectedInvoice] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
 
@@ -33,12 +33,31 @@ const InvoiceList = () => {
         document.body.classList.remove('Invoice-open'); 
     };
 
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
+    const filteredInvoices = invoices.filter(invoice => {
+        return invoice.nameInvoice.toLowerCase().includes(searchTerm.toLowerCase()) ||
+               formatDate(invoice.dataInvoice).includes(searchTerm) ||
+               formatDate(invoice.dataInvoiceSell).includes(searchTerm) ||
+               invoice.seller.includes(searchTerm);
+    });
+
     return (
         <>
         <h1 className='ListInvoiceH1'> Invoices </h1>
 
+        <input
+            type="text"
+            placeholder="Search by name or date..."
+            value={searchTerm}
+            onChange={handleSearch}
+            className="search-input"
+        />
+
         <div className="invoice_ul">
-            {invoices.map(invoice => (
+            {filteredInvoices.map(invoice => (
                 <div className='Invoice_fv' key={invoice.id}  onClick={() => openInvoice(invoice)}>
                     <h2 className='Invoice_title'>Faktura {invoice.nameInvoice}</h2>
                     <p className='Invoice_data'>Customer Name: {invoice.customerName}</p>
