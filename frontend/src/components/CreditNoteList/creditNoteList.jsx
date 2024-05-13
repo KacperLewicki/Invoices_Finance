@@ -7,6 +7,7 @@ export const CreditNoteList = () => {
 
     const [creditNoteInvoices, setCreditNoteInvoice] = useState([]);
     const [selectedCreditNoteInvoice, setSelectedCreditNoteInvoice] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
 
@@ -32,12 +33,31 @@ export const CreditNoteList = () => {
         document.body.classList.remove('Invoice-open'); 
     };
 
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
+    const filteredInvoices = creditNoteInvoices.filter(creditNoteinvoice => {
+        return creditNoteinvoice.CreditNote.toLowerCase().includes(searchTerm.toLowerCase()) ||
+               formatDate(creditNoteinvoice.dataInvoice).includes(searchTerm) ||
+               formatDate(creditNoteinvoice.dataInvoiceSell).includes(searchTerm) ||
+               creditNoteinvoice.seller.includes(searchTerm);
+    });
+
     return (
         <>
         <h1 className='ListInvoiceH1'>Credit Note</h1>
 
+        <input
+            type="text"
+            placeholder="Search by name or date..."
+            value={searchTerm}
+            onChange={handleSearch}
+            className="search-input"
+        />
+
         <div className="invoice_div">
-            {creditNoteInvoices.map(creditNoteinvoice => (
+            {filteredInvoices.map(creditNoteinvoice => (
                 <div className='Invoice_fv' key={creditNoteinvoice.id}  onClick={() => openInvoice(creditNoteinvoice)}>
                     <h2 className='Invoice_title'>Faktura {creditNoteinvoice.CreditNote}</h2>
                     <p className='Invoice_data'>Invoice: {creditNoteinvoice.invoiceName} </p>
