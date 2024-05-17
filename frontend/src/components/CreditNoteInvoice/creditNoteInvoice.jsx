@@ -53,7 +53,7 @@ const InvoiceListCreditNote = ({ creditNoteInvoice, onClose }) => {
           
           <div id="invoice-content_main" >
           <div className="invoice-header">
-              <h2 className='invoice-title'>Faktura {creditNoteInvoice.CreditNote}</h2>
+              <h2 className='invoice-title'>Invoice {creditNoteInvoice.CreditNote}</h2>
           </div>
           <div className="invoice-details">
               <div className="invoice-details-left">
@@ -151,7 +151,7 @@ const InvoiceListCreditNote = ({ creditNoteInvoice, onClose }) => {
 </div>
 </div>
 
-<button className='buttonInvoiceList'  onClick={downloadPdf}>Pobierz PDF</button>
+<button className='buttonInvoiceList'  onClick={downloadPdf}>PDF</button>
       </div> 
         </div>
       </>  

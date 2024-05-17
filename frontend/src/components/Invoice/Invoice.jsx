@@ -71,7 +71,7 @@ const Invoice = ({ invoice, onClose }) => {
           
                 <div id="invoice-content_main" >
                 <div className="invoice-header">
-                    <h2 className='invoice-title'>Faktura {invoice.nameInvoice}</h2>
+                    <h2 className='invoice-title'>Invoice {invoice.nameInvoice}</h2>
                 </div>
                 <div className="invoice-details">
                     <div className="invoice-details-left">
@@ -168,7 +168,7 @@ const Invoice = ({ invoice, onClose }) => {
 </div>
 </div>
 
-<button className='buttonInvoiceList' onClick={downloadPdf}>Pobierz PDF</button>
+<button className='buttonInvoiceList' onClick={downloadPdf}>PDF</button>
 <button className='buttonInvoiceList' onClick={handleButtonClick}>Credit Note</button>
             </div>   
         </div>

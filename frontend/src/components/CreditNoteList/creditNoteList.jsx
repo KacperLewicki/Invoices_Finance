@@ -59,7 +59,7 @@ export const CreditNoteList = () => {
         <div className="invoice_div">
             {filteredInvoices.map(creditNoteinvoice => (
                 <div className='Invoice_fv' key={creditNoteinvoice.id}  onClick={() => openInvoice(creditNoteinvoice)}>
-                    <h2 className='Invoice_title'>Faktura {creditNoteinvoice.CreditNote}</h2>
+                    <h2 className='Invoice_title'>Invoice {creditNoteinvoice.CreditNote}</h2>
                     <p className='Invoice_data'>Invoice: {creditNoteinvoice.invoiceName} </p>
                     <p className='Invoice_data'>Customer Name: {creditNoteinvoice.customerName}</p>
                     <p className='Invoice_data'>Date Invoice: {formatDate(creditNoteinvoice.dataInvoice)}</p>

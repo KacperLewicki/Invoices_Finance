@@ -59,7 +59,7 @@ const InvoiceList = () => {
         <div className="invoice_ul">
             {filteredInvoices.map(invoice => (
                 <div className='Invoice_fv' key={invoice.id}  onClick={() => openInvoice(invoice)}>
-                    <h2 className='Invoice_title'>Faktura {invoice.nameInvoice}</h2>
+                    <h2 className='Invoice_title'>Invoice {invoice.nameInvoice}</h2>
                     <p className='Invoice_data'>Customer Name: {invoice.customerName}</p>
                     <p className='Invoice_data'>Date Invoice: {formatDate(invoice.dataInvoice)}</p>
                     <p className='Invoice_data'>Status: {invoice.status}</p>
