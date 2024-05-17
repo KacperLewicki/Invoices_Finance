@@ -24,7 +24,7 @@ const CreditNoteInvoice = ({ invoice, onClose }) => {
         paymentMethod: invoice.paymentMethod || "",
         EffectiveMonth: invoice.EfectiveMonth || "",
         documentStatus: invoice.documentStatus || "",
-        status: invoice.status || "",
+        status: "correct invoice",
         currency: invoice.currency || ""
     });
 
