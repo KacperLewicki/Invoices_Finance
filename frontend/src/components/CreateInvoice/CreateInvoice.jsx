@@ -137,7 +137,7 @@ render(){
 
         <button type='button' onClick={this.addNewForms} className='addNewFormButton'>New Forms</button>
 
-        <input className='inputValue_invoices' name='nameInvoice' type='text' value={this.state.nameInvoice} disabled placeholder='Numer fakutry pokaże się po wysłaniu'/>
+        <input className='inputValue_invoices' name='nameInvoice' type='text' value={this.state.nameInvoice} disabled placeholder='The fax number will be shown after sending'/>
         <input className='inputValue_invoices' name='dataInvoice' type="date" required disabled={iconsBlocked} value={this.state.dataInvoice} onChange={this.handlerInvoice} placeholder='Issue date'/>
         <input className='inputValue_invoices' name='dataInvoiceSell' type='date' placeholder='Sell-by date' required value={this.state.dataInvoiceSell} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
         <input className='inputValue_invoices' name='status' value={this.state.status} disabled onChange={this.handlerInvoice}/>
