@@ -39,6 +39,7 @@ class CreateInvoice extends React.Component {
       
         this.state = initialState;
       }
+
 updateItems = (newItems) => {
     console.log('Aktualizacja items:', newItems); 
     this.setState({ items: newItems }, this.updateSummaryCost);
@@ -84,10 +85,14 @@ handleFormSubmit = (e) => {
         }, () => {
             this.props.onFormSubmit(this.state, this.state.items) 
             .then(() => {
-               
+
+               console.log(`wykonało sie to co musiało ${this.state.nameInvoice} i ${this.state.items}`)
+            
             }).catch(error => {
+
                 console.error(error);
                 alert('Wystąpił błąd podczas tworzenia faktury lub zapisywania elementów.');
+            
             });
         });
     });
