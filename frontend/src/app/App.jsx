@@ -22,7 +22,7 @@ function App() {
 
       setGradient({
 
-        start: `rgba(255, 255, 255, ${1 - Math.max(x, y)})`,
+        start: `rgba(194, 86, 236, ${1 - Math.max(x, y)})`,
         end: `rgba(0, 0, 255, ${Math.max(x, y)})`
 
       });
@@ -73,7 +73,7 @@ function App() {
 
     <div className='mainContainer'>
 
-   <h1 className='mainNameCompany'>Frista</h1>
+   <h1 className='mainNameCompany'>Nest_Bank</h1>
    <h2 className='aplicationName'>Pay Sprint</h2>
     </div>
     </div>

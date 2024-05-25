@@ -44,7 +44,7 @@ class CreateItemInvoice extends React.Component {
         });
 
     } else {
-        console.log("Error: Button don't add item - check if all fields are numbers")
+        console.log("Error: Button don't add item - moze to być zła wartość")
     }       
 }
 
