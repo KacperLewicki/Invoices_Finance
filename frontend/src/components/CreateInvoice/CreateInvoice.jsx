@@ -1,6 +1,6 @@
 import React from 'react';
-import "./CreateInvoice.css";
-import CreateItemInvoice from '../../components/CreateInvoiceItem/createInvoiceItem';
+import "./createInvoice.css";
+import CreateItemInvoice from '../CreateInvoiceItem/createInvoiceItem';
 
 class CreateInvoice extends React.Component {
 
