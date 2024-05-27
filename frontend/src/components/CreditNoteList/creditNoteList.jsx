@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import InvoiceListCreditNote from "../CreditNoteInvoice/creditNoteInvoice";
-import './CreditNoteList.css'
+import './creditNoteList.css'
 
 export const CreditNoteList = () => {
 

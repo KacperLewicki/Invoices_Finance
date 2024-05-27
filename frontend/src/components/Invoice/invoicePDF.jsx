@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import "./Invoice.css";
+import "./invoicePDF.css";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import CreditNoteInvoice from '../CreditNote/invoiceCreditNote';

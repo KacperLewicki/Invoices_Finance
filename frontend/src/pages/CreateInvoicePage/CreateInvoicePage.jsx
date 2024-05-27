@@ -1,4 +1,4 @@
-import CreateInvoice from '../../components/CreateInvoice/CreateInvoice';
+import CreateInvoice from '../../components/CreateInvoice/createInvoice';
 import axios from 'axios';
 
 const CreateInvoicePage = () => {
