@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 import  {InvoiceListPage}  from '../pages/invoicesPage/invoicesPage';
-import NewsPage from '../pages/newsPage/NewsPage';
+import NewsPage from '../pages/newsPage/newsPage';
 import "./MainPage_App.css";
 import CreateInvoicePage from '../pages/CreateInvoicePage/CreateInvoicePage.jsx';
 import React, { useState, useEffect } from 'react';

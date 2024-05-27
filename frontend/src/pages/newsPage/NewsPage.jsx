@@ -1,4 +1,4 @@
-import "./NewsPage.css";
+import "./newsPage.css";
 import React, { useState } from 'react';
 
 const initialArticles = [
