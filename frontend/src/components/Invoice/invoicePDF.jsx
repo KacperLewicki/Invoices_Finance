@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import "./invoicePDF.css";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import CreditNoteInvoice from '../CreditNote/invoiceCreditNote';
+import CreditNoteInvoice from '../CreateCreditNote/invoiceCreditNote';
 
 const Invoice = ({ invoice, onClose }) => {
     
