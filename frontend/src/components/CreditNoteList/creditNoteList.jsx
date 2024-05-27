@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import InvoiceListCreditNote from "../CreditNoteInvoice/creditNoteInvoice";
+import InvoiceListCreditNote from "../CreditNoteInvoice/creditNotePDF";
 import './creditNoteList.css'
 
 export const CreditNoteList = () => {
