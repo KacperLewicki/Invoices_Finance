@@ -1,6 +1,6 @@
 const express = require('express');
-const pool = require("../config/db");
-const databaseConnection = require('../middleware/databaseConnection');
+const pool = require("../Config/db");
+const databaseConnection = require('../Middleware/databaseConnection');
 const router = express.Router();
 
 const getLastCreditNoteNumber = () => {

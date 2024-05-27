@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const databaseConnection = require('../middleware/databaseConnection');
-const pool = require('../config/db.js')
+const databaseConnection = require('../Middleware/databaseConnection.js');
+const pool = require('../Config/db.js')
 
 router.get('/all-invoices', databaseConnection, (req, res) => {
 

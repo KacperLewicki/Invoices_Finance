@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
-import  {InvoiceListPage}  from '../pages/invoicesPage/invoicesPage';
-import NewsPage from '../pages/newsPage/newsPage';
+import  {InvoiceListPage}  from '../pages/InvoicesPage/invoicesPage';
+import NewsPage from '../pages/NewsPage/newsPage';
 import "./MainPage_App.css";
 import CreateInvoicePage from '../pages/CreateInvoicePage/CreateInvoicePage.jsx';
 import React, { useState, useEffect } from 'react';
-import { CreditNotePage } from '../pages/creditNotePage/creditNotePage';
+import { CreditNotePage } from '../pages/CreditNotePage/creditNotePage';
 
 function App() {
 
