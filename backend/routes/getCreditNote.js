@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pool = require("../config/db");
+const pool = require("../Config/db");
 
 router.get('/allCreditNoteDetails', (req, res) => {
   const sqlQuery = `

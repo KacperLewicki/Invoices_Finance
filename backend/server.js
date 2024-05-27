@@ -1,10 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-const invoiceNumbersRouter = require('./routes/invoiceNumbers');
-const invoiceItemsRouter = require('./routes/invoiceItems');
-const invoicesRouter = require('./routes/invoices');
-const creditNoteRouter = require('./routes/creditNote');
-const getcreditNote = require('./routes/getCreditNote');
+const invoiceNumbersRouter = require('./Routes/invoiceNumbers');
+const invoiceItemsRouter = require('./Routes/invoiceItems');
+const invoicesRouter = require('./Routes/invoices');
+const creditNoteRouter = require('./Routes/creditNote');
+const getcreditNote = require('./Routes/getCreditNote');
 const app = express();
 
 app.use(cors());
