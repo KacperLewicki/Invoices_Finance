@@ -14,16 +14,16 @@ return(
                     Our app is continuously evolving, bringing you the best tools to 
                     streamline your invoicing process.
                 </p>
-                <p className='description'>
+                <p className='description'></p>
                     Features of Pay Sprint include:
-                    <ul>
+                    <ul className='description'>
                         <li>Easy invoice creation and management</li>
                         <li>Detailed credit note handling</li>
                         <li>Real-time updates and notifications</li>
                         <li>Secure data storage and backup</li>
                         <li>User-friendly interface and customization options</li>
                     </ul>
-                </p>
+
                 <blockquote className='quote'>
                     "The best way to predict the future is to create it." - Peter Drucker
                 </blockquote>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import {Link, useNavigate} from 'react-router-dom'
+import React, { useState } from 'react';
+import {Link, useNavigate} from 'react-router-dom';
 import validationLogin from '../../components/ValidationLoginAndRegistration/loginValidation'; 
 import axios from 'axios';
 import "./login.css";
