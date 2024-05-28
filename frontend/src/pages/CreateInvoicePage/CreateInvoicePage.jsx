@@ -31,7 +31,7 @@ const CreateInvoicePage = () => {
             
             return axios.post(apiEndPoint, formData) 
                 .then(response => {
-                    alert('Faktura została pomyślnie utworzona.');
+                    alert('The invoice has been successfully created.');
     
                     if (!Array.isArray(items)) {
                         throw new Error('Items should be an array');
