@@ -68,8 +68,8 @@ export const CreditNoteList = () => {
                     <p className='Invoice_data'>Date Invoice Sell: {formatDate(creditNoteinvoice.dataInvoiceSell)}</p>
                   
                 </div>
-              
             ))}
+            
         </div>
             {selectedCreditNoteInvoice && <InvoiceListCreditNote creditNoteInvoice={selectedCreditNoteInvoice} onClose={closeInvoice} />}
      

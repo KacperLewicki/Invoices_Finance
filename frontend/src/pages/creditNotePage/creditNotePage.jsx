@@ -1,6 +1,6 @@
 import { CreditNoteList } from "../../components/CreditNoteList/creditNoteList"
 
-export const CreditNotePage = () => {
+const CreditNoteListPage = () => {
 
 
     return (
@@ -11,4 +11,5 @@ export const CreditNotePage = () => {
 
 
 }
+export default CreditNoteListPage;
 
