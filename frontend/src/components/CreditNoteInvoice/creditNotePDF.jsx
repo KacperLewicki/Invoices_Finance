@@ -61,7 +61,6 @@ const InvoiceListCreditNote = ({ creditNoteInvoice, onClose }) => {
                       <p className='customer_name_p'>Invoice: <span className='span_p'>{creditNoteInvoice.invoiceName}</span> </p>
                       <p className='customer_name_p'>Customer Name: <span className='span_p'>{creditNoteInvoice.customerName}</span> </p>
                       <p className='customer_name_p'>Seller: <span className='span_p'>{creditNoteInvoice.seller}</span></p>
-                      <p className='customer_name_p'>Efective Month:<span className='span_p'>{creditNoteInvoice.EffectiveMonth}</span></p>
                       <p className='customer_name_p'>Status:<span className='span_p'>{creditNoteInvoice.status}</span></p>
                       <br />
                      
