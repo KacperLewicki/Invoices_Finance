@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
-import validationLogin from '../ValidationLoginAndRegistration/loginValidation'; 
+import validationLogin from '../../components/ValidationLoginAndRegistration/loginValidation'; 
 import axios from 'axios';
 import "./login.css";
 
-function Login() {
+function Login({onLogin}) {
 
 const [values, setValues] = useState({
 
@@ -32,7 +32,7 @@ if(errors.email === "" && errors.password === ""){
     .then( res => {
 
         if(res.data === "Success"){
-
+            onLogin();
             navigate('/HomePage');
 
         } else {
@@ -63,7 +63,7 @@ return (
             </div>
             <button type='submit' className='loginButton'>Log in</button>
 
-            <Link to='/signup' className='signupLink'>Create Account</Link>
+            <Link to='/Signup' className='signupLink'>Create Account</Link>
         </form>
     </div>
 </div>
