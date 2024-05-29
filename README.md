@@ -5,10 +5,6 @@ The Invoices_Finance_App_Website project is a web application designed for invoi
 # Technologies
 Frontend: React.js Backend: Node.js with Express.js
 
-# Features
-Current
-Invoice Retrieval: Integration with an external API for fetching invoices. Displaying Invoices: A subpage dedicated to displaying the retrieved invoices.
-
 # Planned
 Invoice Creation: A feature that allows the creation of new invoices. User Dashboard: Capability for users to manage their accounts and settings.
 
