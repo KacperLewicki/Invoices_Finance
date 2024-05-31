@@ -8,7 +8,7 @@ function databaseConnection(req, res, next) {
                 error: err
             });
         }
-        req.connection = connection;  
+        req.socket = connection;  
         next();
     });
 }

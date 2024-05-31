@@ -18,7 +18,7 @@ const InvoiceList = () => {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:6969/all-invoices')
+        axios.get('http://localhost:6969/invoices/list')
             .then(response => setInvoices(response.data))
             .catch(error => console.error('Error fetching invoices:', error));
     }, []);

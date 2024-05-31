@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import validationSignup from '../../components/ValidationLoginAndRegistration/signupValidation';
+import validationSignup from './signupValidation';
 import "./signup.css"
 
 function Signup() {
