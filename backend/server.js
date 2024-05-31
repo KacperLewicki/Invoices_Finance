@@ -21,7 +21,7 @@ app.use('/creditNote', all_creditNote);
 app.use('/', login);
 app.use('/', signup);
 
-const PORT = process.env.PORT || 6969;
+const PORT = process.env.PORT || 3006;
 app.listen(PORT, () => {
     console.log(`Server nasłuchuje na porcie ${PORT}`);
 });

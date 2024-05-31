@@ -27,7 +27,7 @@ const handleSubmit = (e) => {
 
 if(errors.email === "" && errors.password === ""){
 
-    axios.post('http://localhost:6969/login', values)
+    axios.post('http://localhost:3006/login', values)
 
     .then( res => {
 

@@ -18,7 +18,7 @@ export const CreditNoteList = () => {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:6969/creditNote/listCreditNote')
+        axios.get('http://localhost:3006/creditNote/listCreditNote')
             .then(response => setCreditNoteInvoice(response.data))
             .catch(error => console.error('Error fetching credit note details:', error));
     }, []);

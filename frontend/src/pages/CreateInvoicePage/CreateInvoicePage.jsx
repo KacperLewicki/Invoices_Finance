@@ -5,7 +5,7 @@ const CreateInvoicePage = () => {
 
     let getDataInvoiceNumber = () => {
         
-       const apiEndPoint = "http://localhost:6969/create/invoiceNumber_in_form";
+       const apiEndPoint = "http://localhost:3006/create/invoiceNumber_in_form";
         
             return axios.get(apiEndPoint).then(
             
@@ -27,7 +27,7 @@ const CreateInvoicePage = () => {
         }
 
     let handleFormSubmit = (formData, items) => { 
-            const apiEndPoint = "http://localhost:6969/create/invoice_manualforms";
+            const apiEndPoint = "http://localhost:3006/create/invoice_manualforms";
             
             return axios.post(apiEndPoint, formData) 
                 .then(response => {
@@ -37,7 +37,7 @@ const CreateInvoicePage = () => {
                         throw new Error('Items should be an array');
                     }
 
-                    const itemsEndPoint = "http://localhost:6969/invoice/items"; 
+                    const itemsEndPoint = "http://localhost:3006/invoice/items"; 
                     console.log('Wysyłanie do backendu:', { items, invoiceId: response.data.invoiceId });
                     return axios.post(itemsEndPoint, { 
                         items, 
