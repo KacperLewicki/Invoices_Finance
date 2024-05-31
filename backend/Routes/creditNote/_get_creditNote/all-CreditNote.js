@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const pool = require("../Config/db");
+const databaseConnection = require("../../../Middleware/databaseConnection")
 
-router.get('/allCreditNoteDetails', (req, res) => {
+router.get('/list', databaseConnection, (req, res) => {
   const sqlQuery = `
   SELECT
     a.id,
@@ -36,7 +36,7 @@ router.get('/allCreditNoteDetails', (req, res) => {
   ORDER BY a.invoiceName ASC;
   `;
 
-  pool.query(sqlQuery, (error, results, fields) => {
+  req.socket.query(sqlQuery, (error, results, fields) => {
     if (error) {
       console.error('SQL Error:', error);
       res.status(500).send('Error fetching credit note details: ' + error);

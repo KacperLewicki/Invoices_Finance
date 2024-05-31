@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const pool = require("../Config/db");
+const pool = require("../../Config/db");
 
 router.post('/signup', (req,res) => {
     const sql = "INSERT INTO login (`name`, `email`,`password`) VALUES (?)";

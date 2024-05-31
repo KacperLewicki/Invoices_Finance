@@ -12,7 +12,7 @@ export const Nav = ({ onLogout }) => {
           <button type="button" className="button_StartMenu" onClick={() => navigate('/InvoiceListPage')}>Invoice List</button>
           <button type="button" className="button_StartMenu" onClick={() => navigate('/CreditNoteListPage')}>Credit Note List</button>
           <button type="button" className="button_StartMenu" onClick={() => navigate('/CreateInvoicePage')}>Create Invoice</button>
-          <button type="button" className="button_StartMenu" onClick={onLogout}>Wyloguj</button>
+          <button type="button" className="button_StartMenu" onClick={onLogout}>Logout</button>
         </div>
       </nav>
     );

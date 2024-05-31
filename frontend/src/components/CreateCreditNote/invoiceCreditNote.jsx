@@ -137,7 +137,7 @@ const CreditNoteInvoice = ({ invoice, onClose }) => {
         };
     
         try {
-            const response = await axios.post('http://localhost:6969/api/SaveCreditNote', formDataToSend);
+            const response = await axios.post('http://localhost:6969/create/creditNote', formDataToSend);
             alert('Credit Note saved successfully.');
     
             setInputCreditNote_formData(prevState => ({

@@ -1,22 +1,23 @@
 const express = require('express');
 const cors = require('cors');
-const invoiceNumbersRouter = require('./Routes/invoiceNumbers');
-const invoiceItemsRouter = require('./Routes/invoiceItems');
-const invoicesRouter = require('./Routes/invoices');
-const creditNoteRouter = require('./Routes/creditNote');
-const getcreditNote = require('./Routes/getCreditNote');
-const login = require('./Routes/login');
-const signup = require("./Routes/signup");
-
+const invoiceNumber = require('./Routes/invoices/_get_invoices/createInvoiceNumber_in_form');
+const invoiceItems = require('./Routes/invoices/_post_invoices/invoice_Items');
+const createCreditNote = require('./Routes/creditNote/_post_creditNote/createCreditNote');
+const all_creditNote = require('./Routes/creditNote/_get_creditNote/all-CreditNote');
+const login = require('./Routes/user_registration_and_login/login');
+const signup = require("./Routes/user_registration_and_login/signup");
+const all_invoices = require("./Routes/invoices/_get_invoices/all-invoices");
+const invoice_manualforms = require("./Routes/invoices/_post_invoices/invoice_manualforms");
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use('/', invoiceNumbersRouter);
-app.use('/', invoiceItemsRouter);
-app.use('/', invoicesRouter);
-app.use('/',creditNoteRouter);
-app.use('/', getcreditNote);
+app.use('/create', invoiceNumber);
+app.use('/invoice', invoiceItems);
+app.use('/invoices', all_invoices);
+app.use('/create', invoice_manualforms);
+app.use('/create', createCreditNote);
+app.use('/creditNote', all_creditNote);
 app.use('/', login);
 app.use('/', signup);
 
