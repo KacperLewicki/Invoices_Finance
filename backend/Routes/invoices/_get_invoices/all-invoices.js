@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const databaseConnection = require('../../../Middleware/databaseConnection');
 
-router.get('/list', databaseConnection, (req, res) => {
+router.get('/listInvoices', databaseConnection, (req, res) => {
 
     const query = `
         SELECT invoicemanual.*, invoiceitem.id AS itemId, invoiceitem.nameItem, invoiceitem.comment, invoiceitem.vatItem, 
