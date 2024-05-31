@@ -134,15 +134,15 @@ const InvoiceListCreditNote = ({ creditNoteInvoice, onClose }) => {
 <tbody>
   <tr>
     <td>Summary Netto:</td>
-    <td>{creditNoteInvoice.summaryNetto}</td>
+    <td>{creditNoteInvoice.summaryNetto.toFixed(2)}</td>
   </tr>
   <tr>
     <td>Summary Vat:</td>
-    <td>{creditNoteInvoice.summaryVat}</td>
+    <td>{creditNoteInvoice.summaryVat.toFixed(2)}</td>
   </tr>
   <tr>
     <td>Summary Brutto:</td>
-    <td>{creditNoteInvoice.summaryBrutto}</td>
+    <td>{creditNoteInvoice.summaryBrutto.toFixed(2)}</td>
   </tr>
 </tbody>
 </table>
