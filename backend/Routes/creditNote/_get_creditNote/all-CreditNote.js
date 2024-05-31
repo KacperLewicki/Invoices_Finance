@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const databaseConnection = require("../../../Middleware/databaseConnection")
 
-router.get('/list', databaseConnection, (req, res) => {
+router.get('/listCreditNote', databaseConnection, (req, res) => {
   const sqlQuery = `
   SELECT
     a.id,
