@@ -17,7 +17,7 @@ app.use('/invoice', invoiceItems);
 app.use('/invoices', all_invoices);
 app.use('/create', invoice_manualforms);
 app.use('/create', createCreditNote);
-app.use('/creditNote', all_creditNote);
+app.use('/creditNotes', all_creditNote);
 app.use('/', login);
 app.use('/', signup);
 

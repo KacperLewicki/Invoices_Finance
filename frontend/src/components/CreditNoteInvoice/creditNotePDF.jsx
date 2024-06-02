@@ -61,7 +61,7 @@ const InvoiceListCreditNote = ({ creditNoteInvoice, onClose }) => {
                       <p className='customer_name_p'>Invoice: <span className='span_p'>{creditNoteInvoice.invoiceName}</span> </p>
                       <p className='customer_name_p'>Customer Name: <span className='span_p'>{creditNoteInvoice.customerName}</span> </p>
                       <p className='customer_name_p'>Seller: <span className='span_p'>{creditNoteInvoice.seller}</span></p>
-                      <p className='customer_name_p'>Status:<span className='span_p'>{creditNoteInvoice.status}</span></p>
+                      <p className='customer_name_p'>Status:<span className='span_p'>{"Correct Accept"}</span></p>
                       <br />
                      
               </div>
@@ -97,8 +97,8 @@ const InvoiceListCreditNote = ({ creditNoteInvoice, onClose }) => {
                               <td>{index + 1}</td>
                               <td>{item.itemName}</td>
                               <td>{item.quantity}</td>
-                              <td>{item.bruttoItem}</td>
-                              <td>{item.nettoItem}</td>
+                              <td>{item.bruttoItem.toFixed(2)}</td>
+                              <td>{item.nettoItem.toFixed(2)}</td>
                               <td>{item.vatItem + "%"}</td>
                               <td>{VAT(item.bruttoItem,item.nettoItem)}</td>
                           </tr>

@@ -78,7 +78,7 @@ const Invoice = ({ invoice, onClose }) => {
                         <div className="invoice-section">
                             <p className='customer_name_p'>Customer Name: <span className='span_p'>{invoice.customerName}</span> </p>
                             <p className='customer_name_p'>Seller: <span className='span_p'>{invoice.seller}</span></p>
-                            <p className='customer_name_p'>Status:<span className='span_p'>{invoice.status}</span></p>
+                            <p className='customer_name_p'>Status:<span className='span_p'>{"Accept"}</span></p>
                             <br />
                            
                     </div>
