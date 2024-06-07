@@ -1,44 +1,33 @@
-.App {
-
-    overflow: hidden;
-    transition: background-color 2s ease; 
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-
-}
-
 .buttons_Menu {
-    display: flex;
-    box-shadow: 0 8px 6px -6px #ddd; 
-    transition: background-color 2s ease; 
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10; 
-    background-color: rgb(73, 141, 196);
+ 
 } 
 
 .button_StartMenu {
-    background-color: transparent;
-    background-repeat: no-repeat;
+
+    background-color: initial;
     border: none;
     cursor: pointer;
     overflow: hidden;
     outline: none;
-    opacity: 0.7;
     padding: 15px 32px; 
     text-align: center; 
-    transition: background-color 0.3s ease;
-    font-size: 16px;
+    font-size: 20px;
     margin: 10px 20px;
     cursor: pointer; 
-    color: rgb(255, 255, 255);
     border-radius: 20px;
 
 }
 
 .button_StartMenu:hover {
     
-    background-color: rgb(112, 112, 245) 
+    background-color: #f9f9f9;
+    opacity: 1;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 10px #719ECE;
+    border-radius: 20px;
+
 }
