@@ -9,13 +9,10 @@ import CreateInvoicePage from '../../pages/CreateInvoicePage/CreateInvoicePage';
 import CreditNoteListPage from '../../pages/CreditNotePage/creditNotePage';
 import InvoiceListPage from '../../pages/InvoicesPage/invoicesPage';
 import React, {useEffect} from 'react';
-import  useBackgroundColor  from '../../hooks/useBackGroundColor';
 
 const MainApp = ({ isLoggedIn, onLogin, onLogout, }) => {
 
   const navigate = useNavigate();
-
-  const backgroundcolor = useBackgroundColor();
 
   useEffect(() => {
 
@@ -26,8 +23,9 @@ const MainApp = ({ isLoggedIn, onLogin, onLogout, }) => {
   }, [isLoggedIn, navigate]);
 
   return (
-    <>
-      <div style={backgroundcolor} className='App'>
+
+  <>
+
       {isLoggedIn && <Nav onLogout={onLogout} />}
 
         <Routes>
@@ -39,8 +37,8 @@ const MainApp = ({ isLoggedIn, onLogin, onLogout, }) => {
           <Route path="/CreditNoteListPage" element={<CreditNoteListPage />} />
           <Route path="/InvoiceListPage" element={<InvoiceListPage />} />
         </Routes>
-   
-      </div>
+
+  
     </>
   );
 };

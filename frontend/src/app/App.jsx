@@ -16,7 +16,7 @@ const App = () => {
       localStorage.setItem('isLoggedIn', 'true');
 
     };
-  
+
     const handleLogout = () => {
 
       setIsLoggedIn(false);
@@ -25,11 +25,13 @@ const App = () => {
     };
   
     return (
+
       <Router>
 
           <MainApp isLoggedIn={isLoggedIn} onLogin={handleLogin} onLogout={handleLogout} />
         
       </Router>
+
     );
 };
 

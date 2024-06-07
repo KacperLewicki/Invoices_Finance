@@ -1,58 +1,91 @@
-.homepageContent {
+ .homepageContent {
+
     text-align: center;
-    margin: 150px;
+    padding: 20px;
+    box-sizing: border-box;
+
+  }
+  
+  .centeredTitle {
+
+    font-size: 4.5em;
+    margin: 0.5em 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  }
+  
+  .intro {
+
     background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.homepageContent h1 {
-    font-size: 2.5rem;
-    color: #007bff;
-    margin-bottom: 1rem;
-}
-
-.description {
-    font-size: 1.125rem;
-    color: #333;
-    margin-bottom: 1rem;
+    color: black;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: inline-block;
     text-align: left;
+    max-width: 940px;
+    margin: 0 auto 20px;
+
+  }
+  
+  .description {
+
+    font-size: 1.5em;
+    max-width: 940px;
+    margin: 0.5em 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+  }
+  
+  .hoverDescription {
+
+    background: white;
+    color: black;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: block;
+    text-align: left;
+    max-width: 940px;
+    margin: 20px auto;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+
+  }
+  
+  .imageContainer {
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+
+  }
+
+  .imageBox {
+
+    background: white;
+    color: black;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 10px;
-    padding: 1rem;
+    cursor: pointer;
+    max-width: 300px;
+
+  }
+  
+  .imageBox:hover {
+
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+  }
+  
+  .slideImage {
+
+    width: 100%;
+    border-radius: 10px;
     
-}
-
-.description:hover {
-    transform: scale(1.02);
-    box-shadow: 2 20px 30px rgba(0, 0, 0, 0.2);
-}
-
-.description ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    margin: 0;
-}
-
-.quote {
-    font-size: 1.25rem;
-    color: #555;
-    font-style: italic;
-    margin-top: 1.5rem;
-}
-
-
-
+  }
+  

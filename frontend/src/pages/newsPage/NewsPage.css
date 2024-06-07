@@ -1,20 +1,11 @@
-.NewsPage-body {
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    
-  }
-
   .NewsPage-search-container {
 
     display: flex;
     justify-content: center; 
-    margin: 20px 0; 
+    margin-bottom: 30px; 
 
   }
-  
+
   .NewsPage-search {
 
     width: 100%;
@@ -42,7 +33,7 @@
   }
   
 
-  @media (max-width: 768px) {
+  @media (max-width: 1224px) {
 
     .NewsPage-search {
       padding: 10px 15px; 
@@ -54,10 +45,9 @@
   .NewsPage-form-container {
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
     padding: 20px;
-    max-width: 1200px; 
     margin: auto;
 
   }
@@ -118,7 +108,7 @@
 
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 1224px) {
 
     .NewsPage-form-container {
       grid-template-columns: 1fr; 
