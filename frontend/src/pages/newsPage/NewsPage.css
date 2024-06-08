@@ -108,10 +108,18 @@
 
   }
   
-  @media (max-width: 1224px) {
+@media (max-width: 1200px) {
 
     .NewsPage-form-container {
-      grid-template-columns: 1fr; 
+      grid-template-columns: repeat(2, 1fr);
 
   }
+}
+
+@media (max-width: 800px) {
+
+  .NewsPage-form-container {
+    grid-template-columns: 1fr; 
+
+}
 }

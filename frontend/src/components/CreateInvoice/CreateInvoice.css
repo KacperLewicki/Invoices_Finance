@@ -1,172 +1,172 @@
 .invoices_forms {
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-gap: 20px; 
-    justify-content: center;
-    align-items: center;
-    margin-left: 200px;
-    margin-right: 200px;
-    background-color: #fff;
-    padding: 30px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 20px; 
+  justify-content: center;
+  align-items: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 
-  .invoices_forms:hover {
-
-    transform: translateY(-10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-
-  }
-
-  .summaryh2 {
-
-    grid-column: span 3;
-    grid-row: span 3;
-    color: rgb(128, 128, 204);
-    margin-left: 25px;
-
-  }
-
-  .detailsh2 {
-
-    grid-column: span 3;
-    grid-row: span 3;
-    color: rgb(128, 128, 204);
-    margin-left: 25px;
-
-  }
-  
-  .inputValue_invoices {
-  
-    width: 100%; 
-    padding: 15px;
-    border: 1px solid #007bff; 
-    border-radius: 5px;
-    font-size: 16px;
-
-  }
-
-  .inputValue_invoices:hover {
-
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px aqua(0,0,0,0.2);
-  }
-  
-  .h1_create_invoices {
-
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    margin-bottom: 30px;
-
-  }
-
-  .invoiceCreateButton {
-
-    grid-column: 2;
-    grid-row: 27;
-    width: fit-content;  
-    justify-self: center;  
-    align-items: center;
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    margin-top: 20px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
+.invoices_forms:hover {
+
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.summaryh2 {
+
+  grid-column: span 3;
+  grid-row: span 3;
+  color: rgb(128, 128, 204);
+  margin-left: 25px;
+
+}
+
+.detailsh2 {
+
+  grid-column: span 3;
+  grid-row: span 3;
+  color: rgb(128, 128, 204);
+  margin-left: 25px;
+
+}
+
+.inputValue_invoices {
+
+  width: 100%; 
+  padding: 15px;
+  border: 1px solid #007bff; 
+  border-radius: 5px;
+  font-size: 16px;
+
+}
+
+.inputValue_invoices:hover {
+
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px aqua(0,0,0,0.2);
+
+}
+
+.h1_create_invoices {
+
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 30px;
+
+}
+
+.invoiceCreateButton {
+
+  grid-column: 2;
+  grid-row: 27;
+  width: fit-content;  
+  justify-self: center;  
+  align-items: center;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.invoiceCreateButton:hover {
+
+  background-color: green; 
+
+}
+
+.addNewFormButton {
+
+  grid-column: 1/-1;
+  grid-row: 1;
+  background-color: #0056b3; 
+  color: white;
+  border: none;
+  width: fit-content;
+  justify-self: start;
+  align-items: center;
+  margin: 10px;
+  padding: 10px 20px; 
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.addNewFormButton:hover {
+
+  background-color: green; 
+
+}
+
+input[type="date"]::before {
+
+  color: #999999;
+  content: attr(placeholder);
+
+}
+
+input[type="date"] {
+
+  color: #ffffff;
+
+}
+
+input[type="date"]:focus,
+input[type="date"]:valid {
+
+  color: #666666;
   
-  .invoiceCreateButton:hover {
+}
 
-    background-color: green; 
-    
-  }
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
 
-  .addNewFormButton {
+  content: "" !important;
 
-    grid-column: 1/-1;
-    grid-row: 1;
-    background-color: #0056b3; 
-    color: white;
-    border: none;
-    width: fit-content;
-    justify-self: start;
-    align-items: center;
-    margin: 10px;
-    padding: 10px 20px; 
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-  }
-
-  .addNewFormButton:hover {
-
-    background-color: green; 
-    
-  }
-
-  input[type="date"]::before {
-
-	color: #999999;
-	content: attr(placeholder);
-
-  }
-
-  input[type="date"] {
-
-	color: #ffffff;
-
-  }
-
-  input[type="date"]:focus,
-  input[type="date"]:valid {
-
-	color: #666666;
-
-  }
-
-  input[type="date"]:focus::before,
-  input[type="date"]:valid::before {
-
-	content: "" !important;
-
-  }
+}
 
 @media (max-width: 1024px) {
 
   .invoices_forms {
       margin-left: 0px;
       margin-right: 0px;
-    }
+  }
 
 }
 
 @media (max-width: 768px) {
 
-    .invoices_forms {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
+  .invoices_forms {
+      margin-left: 0px;
+      margin-right: 0px;
+  }
 
 }
 
 @media (max-width: 480px) {
 
-    .invoices_forms {
-        margin-left: 0px; 
-        margin-right: 0px;
-    }
-    
-}
+  .invoices_forms {
+      margin-left: 0px; 
+      margin-right: 0px;
+  }
 
+}
