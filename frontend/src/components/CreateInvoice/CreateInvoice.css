@@ -16,10 +16,12 @@
 
 }
 
-.invoices_forms:hover {
+.h1_create_invoices {
 
-  transform: translateY(-10px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 30px;
 
 }
 
@@ -48,22 +50,6 @@
   border: 1px solid #007bff; 
   border-radius: 5px;
   font-size: 16px;
-
-}
-
-.inputValue_invoices:hover {
-
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px aqua(0,0,0,0.2);
-
-}
-
-.h1_create_invoices {
-
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-  margin-bottom: 30px;
 
 }
 
