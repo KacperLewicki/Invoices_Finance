@@ -142,15 +142,15 @@ render(){
 
         <button type='button' onClick={this.addNewForms} className='addNewFormButton'>New Forms</button>
 
-        <input className='inputValue_invoices' name='nameInvoice' type='text' value={this.state.nameInvoice} disabled placeholder='The fax number will be shown after sending'/>
-        <input className='inputValue_invoices' name='dataInvoice' type="date" required disabled={iconsBlocked} value={this.state.dataInvoice} onChange={this.handlerInvoice} placeholder='Issue date'/>
-        <input className='inputValue_invoices' name='dataInvoiceSell' type='date' placeholder='Sell-by date' required value={this.state.dataInvoiceSell} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
-        <input className='inputValue_invoices' name='status' value={this.state.status} disabled onChange={this.handlerInvoice}/>
-        <input className='inputValue_invoices' name='seller' type= "text" value={this.state.seller} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Seller'/>
-        <input className='inputValue_invoices' name='customerName' type='text' value={this.state.customerName} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Customer'/>
-        <textarea className='inputValue_invoices' name='description' type='text' value={this.state.description} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='description'/>
+        <input className='inputValue_invoices' title='Name Invoice' name='nameInvoice' type='text' value={this.state.nameInvoice} disabled placeholder='The fax number will be shown after sending'/>
+        <input className='inputValue_invoices' title='Data Invoice' name='dataInvoice' type="date" required disabled={iconsBlocked} value={this.state.dataInvoice} onChange={this.handlerInvoice} placeholder='Issue date'/>
+        <input className='inputValue_invoices' title='Data Invocie Sell' name='dataInvoiceSell' type='date' placeholder='Sell-by date' required value={this.state.dataInvoiceSell} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
+        <input className='inputValue_invoices' title='Status' name='status' value={this.state.status} disabled onChange={this.handlerInvoice}/>
+        <input className='inputValue_invoices' title='Seller' name='seller' type= "text" value={this.state.seller} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Seller'/>
+        <input className='inputValue_invoices' title='Customer' name='customerName' type='text' value={this.state.customerName} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Customer'/>
+        <textarea className='inputValue_invoices' title='Description' name='description' type='text' value={this.state.description} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='description'/>
         <label>
-        <select className='inputValue_invoices' name="EfectiveMonth" type='text' value={this.state.EfectiveMonth} disabled={iconsBlocked} onChange={this.handlerInvoice}>
+        <select className='inputValue_invoices' title='Efective Month' name="EfectiveMonth" type='text' value={this.state.EfectiveMonth} disabled={iconsBlocked} onChange={this.handlerInvoice}>
             <option hidden>Efective month</option>
             <option>January</option>
             <option>February</option>
@@ -170,26 +170,26 @@ render(){
         <CreateItemInvoice updateItems={this.updateItems} /> 
        
         <h2 className='summaryh2'>Summary</h2>
-        <input className='inputValue_invoices' type='Number' name='summaryNetto' value={this.state.summaryNetto} onChange={this.handlerInvoice} placeholder='Netto' disabled />
-        <input className='inputValue_invoices' type='Number' name='summaryVat' value={this.state.summaryVat} onChange={this.handlerInvoice} placeholder='Vat' disabled/>
-        <input className='inputValue_invoices' type='Number' name='summaryBrutto' value={this.state.summaryBrutto} onChange={this.handlerInvoice} placeholder='Total'disabled />
+        <input className='inputValue_invoices' title='Summary Netto' type='Number' name='summaryNetto' value={this.state.summaryNetto} onChange={this.handlerInvoice} placeholder='Netto' disabled />
+        <input className='inputValue_invoices' title='Summary Vat' type='Number' name='summaryVat' value={this.state.summaryVat} onChange={this.handlerInvoice} placeholder='Vat' disabled/>
+        <input className='inputValue_invoices' title='Summary Brutto' type='Number' name='summaryBrutto' value={this.state.summaryBrutto} onChange={this.handlerInvoice} placeholder='Total'disabled />
 
         <label>
-        <select className='inputValue_invoices' name="currency" type='text' value={this.state.currency} disabled={iconsBlocked} onChange={this.handlerInvoice}>
+        <select className='inputValue_invoices' title='Currency' name="currency" type='text' value={this.state.currency} disabled={iconsBlocked} onChange={this.handlerInvoice}>
             <option hidden>Select Currency</option>
             <option>PLN</option>
             <option>EUR</option>
             <option>USD</option>
         </select>
         </label>
-        <input className='inputValue_invoices' name='paymentMethod' value={this.state.paymentMethod} disabled onChange={this.handlerInvoice} />     
-        <input className='inputValue_invoices' type='Number' name='ExchangeRate' value={this.state.ExchangeRate} onChange={this.handlerInvoice} placeholder='Exchange rate' />
-        <input className='inputValue_invoices' name='DueDate' type='date' placeholder='Due Date' required value={this.state.DueDate} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
+        <input className='inputValue_invoices' title='Payment Method' name='paymentMethod' value={this.state.paymentMethod} disabled onChange={this.handlerInvoice} />     
+        <input className='inputValue_invoices' title='Exchange Rate' type='Number' name='ExchangeRate' value={this.state.ExchangeRate} onChange={this.handlerInvoice} placeholder='Exchange rate' />
+        <input className='inputValue_invoices' title='Due Date' name='DueDate' type='date' placeholder='Due Date' required value={this.state.DueDate} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
      
 
        
         <h2 className='detailsh2'>Details</h2>
-        <select className='inputValue_invoices' name="documentStatus" type='text' value={this.state.documentStatus} disabled={iconsBlocked} onChange={this.handlerInvoice}>
+        <select className='inputValue_invoices' title='Document Status' name="documentStatus" type='text' value={this.state.documentStatus} disabled={iconsBlocked} onChange={this.handlerInvoice}>
             <option hidden>Document Status</option>
             <option>Issued</option>
             <option>Paid</option>
@@ -198,8 +198,8 @@ render(){
             <option>Corrected</option>
 
         </select>
-        <input className='inputValue_invoices' name='PaymentTerm' type='date' placeholder='Payment term' required value={this.state.PaymentTerm} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
-        <textarea className='inputValue_invoices' name='comments' type='text' value={this.state.comments} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Comments'/>
+        <input className='inputValue_invoices' title='Payment  Term' name='PaymentTerm' type='date' placeholder='Payment term' required value={this.state.PaymentTerm} disabled={iconsBlocked} onChange={this.handlerInvoice}/>
+        <textarea className='inputValue_invoices' title='Comments' name='comments' type='text' value={this.state.comments} disabled={iconsBlocked} onChange={this.handlerInvoice} placeholder='Comments'/>
         
         <button className='invoiceCreateButton' disabled={iconsBlocked} type='submit'> Send Invoice </button>
         </form> 
